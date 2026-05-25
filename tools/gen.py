@@ -43,12 +43,17 @@ TARGETS = [
      "lacquer-red surface with fine gold dragon line-work and warm gold rim light, "
      "luminous vapor swirling inside the glass and a wisp rising from the top. " + BRAND, "1:1"),
 
-    ("popup-dispensary.jpg", CHREF,
-     "A premium portable Cloud Bar pop-up podium, glossy lacquer-red with gold trim and "
-     "a warm gold LED rim, the red-and-gold octagonal Xiaolin temple seal printed large "
-     "and centered on the front. " + CHALICE + "Two or three of these identical Chalice "
-     "vaporizers stand on top of the podium, vapor rising. Set inside an upscale modern "
-     "cannabis dispensary with warm walnut shelving and premium retail lighting. " + BRAND, "4:3"),
+    ("popup-dispensary.jpg",
+     ["chalice/c7.jpg", "cannagars/godfather.png", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A clean retail photograph of the compact Made in Xiaolin x SYPP Cloud Bar countertop "
+     "unit (about 36 x 18 inches, a low lacquer-red and gold LED tray) sitting on a dispensary "
+     "retail counter. " + CHALICE + "Three Chalice hexagonal bases sit inset in gold-lit "
+     "cradles along the BACK with vapor rising; built-in BACKLIT CUTOUT slots along the FRONT "
+     "hold upright Made in Xiaolin cannagars (gold-tipped, red-and-gold bands, like the "
+     "reference) glowing with the same warm gold backlight, plus a brochure slot. A small "
+     "red-and-gold octagonal Xiaolin seal and a 'GET THE CHALICE - PAY BY CARD' card on the "
+     "front face. Warm dispensary lighting, branded shelving softly blurred behind. Compact, "
+     "clean, premium product-in-situ shot. " + BRAND, "4:3"),
 
     ("tasting-dispensary.jpg", CHREF,
      "An elegant ritual guide hosting a customer through a cloud tasting at a curved "
@@ -66,16 +71,16 @@ TARGETS = [
      "product lighting, red and gold. " + BRAND, "4:3"),
 
     ("nightlife.jpg",
-     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A high-energy upscale New York City nightclub. A long bar runs through the room with a "
-     "glowing warm-gold LED top. " + CHALICE + "A row of these Chalice vaporizers is seated "
-     "INSET into the glowing LED bar top, each in a circular gold-lit cradle, vapor rising. "
-     "Around the bar and on the floor, stylish well-dressed guests are HOLDING the glass "
-     "Chalice cups in their hands and sipping the cloud through clear straws, mingling and "
-     "enjoying — a lively NYC club crowd. The red-and-gold octagonal Xiaolin temple seal "
-     "glows on the front of the bar. Deep lacquer-red and gold with moody club lighting, "
-     "colored light accents, bokeh, a DJ glow in the background. Cinematic nightlife "
-     "photography, atmospheric and energetic. " + BRAND, "16:9"),
+     ["chalice/c7.jpg", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A warm, upscale cocktail bar at night — a normal stylish bar with a back-bar full of "
+     "liquor bottles, cocktail glasses and soft pendant lighting, patrons mingling. Sitting "
+     "ON THE BAR next to the bartender is a compact THREE-UNIT Made in Xiaolin x SYPP Cloud "
+     "Bar LED tray (lacquer-red and gold, three Chalice hexagonal bases inset in gold-lit "
+     "cradles, vapor rising). " + CHALICE + "The bartender is filling one Chalice and handing "
+     "its clear glass dome cup to a customer across the bar. Other well-dressed customers "
+     "stand around holding glass dome cups and sipping vapor through clear straws, mingling. "
+     "Real candid nightlife photography, warm and natural — a regular cocktail bar with the "
+     "Cloud Bar tray as a special feature, NOT an all-red themed club. " + BRAND, "16:9"),
 
     ("xiaolin-blend-cart.jpg",
      ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "Photoroom_20241218_174339.jpg"],
@@ -89,22 +94,21 @@ TARGETS = [
 
     ("popup-set.jpg",
      ["chalice/c7.jpg", "cannagars/godfather.png", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A realistic candid photograph inside a warm modern cannabis dispensary. A long "
-     "RECTANGULAR Made in Xiaolin x SYPP Cloud Bar pop-up TABLE, heavily branded in glossy "
-     "lacquer-red and gold — a large red-and-gold octagonal Xiaolin temple seal and fine "
-     "gold dragon line-work across the front skirt, with a clean gold promo banner reading "
-     "'GET THE CHALICE - SPECIAL PRICE' and a small 'PAY BY CARD' tag beside a QR code. The "
-     "lacquer-red and gold LED TOPPER spans the table. Along the BACK row, " + CHALICE
-     + "three Chalice hexagonal bases sit INSET in circular gold-lit cradles with vapor "
-     "rising, shifted toward the back. Built INTO the front of the topper are integrated "
-     "display holders: an upright row of Made in Xiaolin pre-roll cannagars (gold-tipped, "
-     "red-and-gold Xiaolin bands, like the reference) in a milled holder, and angled slots "
-     "holding glossy brochures and cards. The clear glass dome cups lift off the bases. The "
-     "brand ambassador — a pretty young Asian woman in a fitted Made in Xiaolin tee — is "
-     "HANDING one clear glass dome cup across the table to a customer; another guest stands "
-     "sipping the cloud from a glass dome through a clear straw. Guests hold ONLY the glass "
-     "dome, never the base. Warm dispensary lighting, branded shelving softly blurred behind. "
-     "Real, authentic lifestyle photography. " + BRAND, "16:9"),
+     "A realistic photograph inside a modern cannabis dispensary: a COMPACT countertop Made "
+     "in Xiaolin x SYPP Cloud Bar unit — only about 36 inches wide and 18 inches deep, a small "
+     "tabletop LED tray, NOT a large floor podium — sitting on the dispensary's retail "
+     "counter. It is a low lacquer-red and gold LED tray, tastefully branded with a small "
+     "red-and-gold octagonal Xiaolin seal on the front face and a little 'GET THE CHALICE - "
+     "PAY BY CARD' card. " + CHALICE + "Along the BACK of the tray, three Chalice hexagonal "
+     "bases sit inset in circular gold-lit cradles with vapor rising (set back). Along the "
+     "FRONT of the same LED tray are built-in BACKLIT CUTOUT slots holding upright Made in "
+     "Xiaolin pre-roll cannagars (gold-tipped, red-and-gold bands, like the reference) — the "
+     "cannagar cutouts glow with the same warm gold backlight as the chalice cradles — plus a "
+     "slim slot of brochures and cards. The clear glass dome cups lift off the bases. The "
+     "brand ambassador, a young Asian woman in a Made in Xiaolin tee, stands behind the "
+     "counter handing a clear glass dome cup to a customer; another guest sips from a glass "
+     "dome through a straw — guests hold only the glass. Compact, clean, easy to use. Warm "
+     "dispensary lighting. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
@@ -114,13 +118,15 @@ TARGETS = [
      "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
 
     ("led-topper.jpg",
-     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "Museum-style product photograph of the Made in Xiaolin x SYPP Cloud Bar LED TOPPER — a "
-     "sleek rectangular lacquer-red and gold panel with several circular gold-lit LED cradles "
-     "that hold the Chalice hexagonal bases, glowing warm gold. The red-and-gold octagonal "
-     "Xiaolin seal is on the panel. One Chalice base sits in a cradle with its clear glass "
-     "dome and a wisp of vapor. Clean studio hardware photography on a dark red-and-gold "
-     "surface, premium. " + BRAND, "4:3"),
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "cannagars/godfather.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "Museum-style product photograph of the compact Made in Xiaolin x SYPP Cloud Bar LED "
+     "TRAY (about 36 x 18 inches), a low lacquer-red and gold tray. The BACK row has circular "
+     "gold-lit cradles holding the Chalice hexagonal bases (one Chalice seated with its clear "
+     "glass dome and a wisp of vapor). The FRONT row has built-in BACKLIT CUTOUT slots holding "
+     "upright Made in Xiaolin cannagars (gold-tipped, red-and-gold bands, like the reference), "
+     "glowing with the same warm gold backlight as the cradles, plus a slim brochure slot. The "
+     "red-and-gold octagonal Xiaolin seal on the front face. Clean studio hardware "
+     "photography, dark red-and-gold backdrop, premium. " + BRAND, "4:3"),
 
     ("kit-bag.jpg",
      ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "logo-sypp.png"],
