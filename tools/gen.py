@@ -73,6 +73,17 @@ TARGETS = [
      "temple seal glows on the front of the bar. Cinematic editorial hospitality "
      "photograph. " + BRAND, "16:9"),
 
+    ("retail-bar-guide.jpg", CHREF,
+     "A cinematic retail hero photograph: a stylish, elegant female ritual guide "
+     "standing behind a premium Made in Xiaolin Cloud Bar — a glossy lacquer-red "
+     "counter with gold trim and a warm gold LED rim, the large red-and-gold "
+     "octagonal Xiaolin temple seal on the front. " + CHALICE + "Several of these "
+     "Chalice vaporizers are lined up across the bar top, displayed ready for retail "
+     "with vapor gently rising. A crisp black-and-white QR code is printed on the "
+     "front table skirt (the panel covering the front of the bar) for instant "
+     "purchase. Warm premium retail lighting, fine gold dragon line-work, the guide "
+     "smiling, inviting. " + BRAND, "16:9"),
+
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
      "cloud canopy. " + CHALICE + "A row of these identical Chalice vaporizers glows along "

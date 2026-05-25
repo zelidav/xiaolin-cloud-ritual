@@ -94,6 +94,11 @@
   #cover .sub{margin-top:1.5rem;font-size:clamp(1rem,2vw,1.5rem);font-weight:300;color:var(--mute);letter-spacing:.02em}
   #cover .foot,#close .foot{margin-top:2.6rem;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
   .cn-big{font-family:var(--sc);color:var(--gold);font-weight:300;font-size:1.2rem;letter-spacing:.55em;margin-bottom:.5rem;padding-left:.55em}
+  /* cover hero retail mockup */
+  .cover-hero{width:min(66vw,640px);margin:.4rem auto 1.5rem;border-radius:6px;overflow:hidden;outline:2px solid var(--gold-soft);outline-offset:-7px;box-shadow:0 20px 64px rgba(0,0,0,.55),0 0 70px rgba(216,34,47,.22)}
+  .cover-hero img{display:block;width:100%;height:auto}
+  #cover .coin{margin-bottom:1rem}#cover .marque{margin-bottom:1.4rem}
+  @media (max-width:880px){.cover-hero{width:86vw}}
 
   /* chalice svg */
   .chalice-stage{position:relative;width:min(30vw,310px);margin:0 auto 1.8rem;filter:drop-shadow(0 0 50px rgba(255,170,90,.35))}
@@ -214,27 +219,8 @@
   <div class="inner">
     <div class="coin" aria-label="Made in Xiaolin seal"><div class="spin"><img class="face" src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt="Made in Xiaolin seal"/><img class="face back" src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/></div></div>
     <div class="marque">Made in Xiaolin <span class="x">×</span> SYPP Cloud Bar</div>
-    <div class="chalice-stage" aria-hidden="true">
-      <svg viewBox="0 0 240 340">
-        <!-- rising vapor (the Chalice fills with vapor, not liquid) -->
-        <ellipse class="cloud-anim" cx="120" cy="24" rx="30" ry="15" fill="url(#halo)"/>
-        <ellipse class="cloud-anim" cx="120" cy="46" rx="18" ry="8" fill="url(#halo)" opacity=".7" style="animation-delay:1.5s"/>
-        <ellipse class="underglow" cx="120" cy="172" rx="38" ry="44" fill="url(#halo)" opacity=".5"/>
-        <!-- clear faceted glass dome -->
-        <path d="M120 72 L188 150 Q198 196 168 224 Q120 252 72 224 Q42 196 52 150 Z" fill="#ffffff" fill-opacity=".06" stroke="#f7d27e" stroke-opacity=".55" stroke-width="1.4"/>
-        <path d="M120 72 L188 150 Q198 196 168 224 Q120 252 72 224 Q42 196 52 150 Z" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="3"/>
-        <!-- gold rim at the top opening -->
-        <ellipse cx="120" cy="74" rx="26" ry="7" fill="#1a0a0b" fill-opacity=".5"/>
-        <ellipse cx="120" cy="74" rx="26" ry="7" fill="none" stroke="#f0cf86" stroke-width="3"/>
-        <!-- black mouthpiece -->
-        <rect x="111" y="150" width="18" height="34" rx="8" fill="#15090a"/>
-        <!-- red Xiaolin seal on the glass -->
-        <image href="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" x="99" y="118" width="42" height="42" opacity=".96"/>
-        <!-- hexagonal base -->
-        <polygon points="48,278 78,252 162,252 192,278 162,304 78,304" fill="url(#lac)" stroke="#f0cf86" stroke-opacity=".5" stroke-width="1.2"/>
-        <image href="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" x="108" y="266" width="24" height="24" opacity=".9"/>
-        <ellipse class="underglow" cx="120" cy="312" rx="90" ry="14" fill="url(#rhalo)" opacity=".7"/>
-      </svg>
+    <div class="cover-hero">
+      <img src="img/gen/retail-bar-guide.jpg?v=6" alt="Made in Xiaolin Cloud Bar — ritual guide, Chalices ready for retail, QR purchase on the skirt" />
     </div>
     <div class="cn-big">雲 儀</div>
     <h1>The Xiaolin<br/><span class="l2">Cloud Ritual</span></h1>
@@ -557,7 +543,7 @@
     <h2>Environments</h2>
     <p class="small" style="color:var(--gold);margin-bottom:1.2rem">Lacquer red, gold trim, warm LED, the Xiaolin chop — branded mockups generated from SYPP's real Cloud Bar systems.</p>
     <div class="grid g3" style="gap:1.1rem">
-      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/hero-chalice.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>The Chalice</b>Museum product display.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/retail-bar-guide.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Retail-Ready Bar</b>Ritual guide · Chalices · QR purchase.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/popup-dispensary.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Dispensary Pop-Up</b>Branded portable bar.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/tasting-dispensary.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Guided Tasting</b>Ritual at the counter.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/installation-trays.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Modular Trays</b>Countertop to bar.</span></div>
