@@ -162,13 +162,47 @@ TARGETS = [
      "light and the small red octagonal Xiaolin seal on the glass, a clear straw resting in "
      "it. Dark red-and-gold bokeh behind, dramatic premium product lighting, photoreal. " + BRAND, "9:16"),
 
+    ("reel-wide.jpg",
+     ["gen/popup-dispensary.jpg", "gen/popup-set.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical WIDE establishing shot, camera pulled back to show a full upscale cannabis "
+     "DISPENSARY interior: warm wood-and-black shelving filled with Made in Xiaolin red-and-gold "
+     "products, and in the center the Made in Xiaolin x SYPP Cloud Bar pop-up with its LED tray. "
+     "A group of diverse young customers sample around it — holding hand-sized clear glass dome "
+     "cups, vapor rising — with an Asian woman ambassador in a Made in Xiaolin tee hosting. "
+     "Spacious real dispensary, warm inviting light, lots of people. " + BRAND, "9:16"),
+
+    ("reel-lift.jpg",
+     ["chalice/c-hand.jpg", "chalice/c7.jpg", "gen/popup-dispensary.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical shot: a hand holding a hand-sized clear glass dome cup UP IN THE AIR, clearly "
+     "LIFTED OFF and fully SEPARATED from its red hexagonal base — the empty base sits below on "
+     "the red-and-gold LED tray, and dense white-gold vapor spills and pours from the lifted "
+     "glass dome. The glass is unmistakably detached and held above the base. Warm dispensary, "
+     "premium, photoreal. " + BRAND, "9:16"),
+
+    ("reel-group.jpg",
+     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical candid photo: a lively GROUP of four or five diverse young people gathered "
+     "around the Made in Xiaolin x SYPP Cloud Bar in an upscale dispensary lounge — several of "
+     "them HOLDING hand-sized clear glass dome cups and sipping vapor through straws, laughing "
+     "and socializing together; an Asian woman ambassador in a Made in Xiaolin tee hosting. "
+     "Warm, energetic, real lifestyle photography, lots of people in the action. " + BRAND, "9:16"),
+
+    ("reel-home.jpg",
+     ["chalice/c-hand.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical cozy lifestyle photo: a young customer relaxing at home on a couch with two "
+     "friends, enjoying the Made in Xiaolin Chalice together — holding a hand-sized clear glass "
+     "dome cup with soft vapor, sipping through a straw, laughing; warm living-room light, "
+     "plants and modern decor. The customer in front looks straight at the camera and WINKS "
+     "playfully with a smile. Real, warm, authentic lifestyle photography. " + BRAND, "9:16"),
+
     ("reel-walkaway.jpg",
      ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A vertical candid photo: a happy young customer walking away from a dispensary checkout "
-     "counter toward camera, holding a boxed Made in Xiaolin CHALICE (the gift box bears the "
-     "red-and-gold octagonal Xiaolin seal) in their hands, smiling, a shopping moment. Warm "
-     "modern dispensary interior softly blurred behind, register and budtender in the "
-     "background. Real, authentic lifestyle photography. " + BRAND, "9:16"),
+     "counter toward camera, carrying a SMALL Made in Xiaolin Chalice box in one hand — the "
+     "box is compact (about the size of a small shoebox, since the Chalice is a hand-sized "
+     "device), with the red-and-gold octagonal Xiaolin seal on it. Smiling, a shopping moment. "
+     "Warm modern dispensary softly blurred behind, register and budtender in the background. "
+     "Real, authentic lifestyle photography. " + BRAND, "9:16"),
 
     ("led-topper.jpg",
      ["gen/popup-dispensary.jpg", "chalice/c7.jpg", "chalice/c-hand.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
