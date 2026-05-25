@@ -83,16 +83,17 @@ TARGETS = [
      "lacquer-red and gold setting, warm museum product lighting, single hero subject. "
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
-    ("retail-bar-guide.jpg", CHREF,
-     "A cinematic retail hero photograph: a stylish, elegant female ritual guide "
-     "standing behind a premium Made in Xiaolin Cloud Bar — a glossy lacquer-red "
-     "counter with gold trim and a warm gold LED rim, the large red-and-gold "
-     "octagonal Xiaolin temple seal on the front. " + CHALICE + "Several of these "
-     "Chalice vaporizers are lined up across the bar top, displayed ready for retail "
-     "with vapor gently rising. A crisp black-and-white QR code is printed on the "
-     "front table skirt (the panel covering the front of the bar) for instant "
-     "purchase. Warm premium retail lighting, fine gold dragon line-work, the guide "
-     "smiling, inviting. " + BRAND, "16:9"),
+    ("popup-set.jpg",
+     ["img-events-popup-sypp.jpg", "chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A realistic retail photograph of a Made in Xiaolin Cloud Bar pop-up display "
+     "standing on the floor of a modern cannabis dispensary. The pop-up is a portable "
+     "podium of the same rounded tapered shape as the first reference podium, re-skinned "
+     "in glossy lacquer-red with subtle gold trim and a warm gold LED rim, the red-and-gold "
+     "octagonal Xiaolin temple seal and a small neat QR code printed on the front skirt. "
+     + CHALICE + "Exactly three of these Chalice vaporizers stand in a row on top of the "
+     "podium, vapor gently rising. Warm dispensary retail lighting, wood shelving with "
+     "product softly blurred behind. Understated, premium, realistic — a tasteful in-store "
+     "pop-up, not a theatrical stage. " + BRAND, "4:3"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
