@@ -61,13 +61,16 @@ TARGETS = [
      "lighting, branded shelving softly blurred behind. Premium product-in-situ shot, all "
      "Chinese lacquer-red and gold. " + BRAND, "4:3"),
 
-    ("tasting-dispensary.jpg", CHREF,
-     "An elegant ritual guide hosting a customer through a cloud tasting at a curved "
-     "premium dispensary counter. " + CHALICE + "On the counter, a lacquer-red LED tray "
-     "with gold trim holds two or three of these identical Chalice vaporizers, vapor "
-     "rising. The red-and-gold octagonal Xiaolin temple seal appears on a small display "
-     "card. Warm, intimate, premium retail interior with red and gold accent lighting. "
-     "Candid editorial photograph. " + BRAND, "4:3"),
+    ("tasting-dispensary.jpg",
+     ["chalice/c7.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "The MAIN SUBJECT is a well-dressed man in a sharp tailored suit who closely RESEMBLES the "
+     "person in the founder reference photo (same face and features) — he stands at a curved "
+     "premium dispensary counter sampling a Cloud Ritual, holding ONE hand-sized clear glass "
+     "dome and sipping through a clear straw, smiling. Behind the counter, a young Asian woman "
+     "ritual guide in a Made in Xiaolin tee hosts him. " + CHALICE + "On the counter a "
+     "lacquer-red LED tray with gold trim holds two hand-sized Chalices, vapor rising, and a "
+     "small red-and-gold octagonal Xiaolin seal display card. Warm, intimate, premium retail "
+     "interior, red and gold accent lighting. Candid editorial photograph. " + BRAND, "4:3"),
 
     ("installation-trays.jpg", CHREF,
      "Museum-style product display of a modular Cloud Bar LED tray, lacquer-red with gold "
