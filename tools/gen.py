@@ -126,12 +126,15 @@ TARGETS = [
      "off its base (just the glass in hand, not the base, not the whole device), sipping through "
      "a clear straw. Warm dispensary lighting, branded shelving softly blurred behind. " + BRAND, "16:9"),
 
-    ("event.jpg", CHREF,
-     "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
-     "cloud canopy. " + CHALICE + "A row of these identical Chalice vaporizers glows along "
-     "the bar, vapor rising. Fine gold dragon line-work, the red-and-gold octagonal "
-     "Xiaolin temple seal as the hero logo on the bar front, a stylish product-launch "
-     "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
+    ("event.jpg",
+     ["chalice/c7.jpg", "chalice/c-hand.jpg", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vibrant NIGHTCLUB event: a packed, energetic club with a glowing DJ booth and a crowd "
+     "of stylish young people dancing and mingling under colored club lights and haze. A Made "
+     "in Xiaolin x SYPP Cloud Bar activation is set up in the club — a red-and-gold LED Cloud "
+     "Bar with chalices — and several guests around it are HOLDING hand-sized clear glass dome "
+     "cups, sipping vapor through straws, smiling. " + CHALICE + "Energetic club atmosphere, "
+     "bokeh, haze, red-and-gold Xiaolin branding and the octagonal seal glowing on the bar. "
+     "Cinematic nightlife event photography. " + BRAND, "16:9"),
 
     ("reel-sample.jpg",
      ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
