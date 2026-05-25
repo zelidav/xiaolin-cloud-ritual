@@ -44,15 +44,16 @@ TARGETS = [
      "luminous vapor swirling inside the glass and a wisp rising from the top. " + BRAND, "1:1"),
 
     ("popup-dispensary.jpg",
-     ["chalice/c7.jpg", "cannagars/godfather.png", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["chalice/c7.jpg", "joints/lineup.png", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A clean retail photograph of the compact Made in Xiaolin x SYPP Cloud Bar countertop "
      "unit (about 36 x 18 inches, a SLIM LOW-PROFILE lacquer-red and gold LED tray only a couple "
      "inches thick — light and portable, not a bulky box) sitting on a dispensary retail counter. " + CHALICE + "TWO Chalice hexagonal bases sit inset in gold-lit "
      "cradles along the BACK with vapor rising, leaving plenty of room; built-in BACKLIT CUTOUT "
-     "slots fill the rest of the tray holding a generous row of upright Made in Xiaolin cannagars (gold-tipped, red-and-gold bands, like the "
+     "slots fill the rest of the tray holding just 3-4 sample Made in Xiaolin joints of different sizes — a cannagar, a Soldato and a small Bambino (gold-tipped, red-and-gold bands, like the "
      "reference) glowing with the same warm gold backlight, plus a brochure slot. A small "
      "red-and-gold octagonal Xiaolin seal and a 'GET THE CHALICE - PAY BY CARD' card on the "
-     "front face. Warm dispensary lighting, branded shelving softly blurred behind. Compact, "
+     "front face. The LED tray is all Chinese lacquer-red and gold (no wood, no black). Warm "
+     "dispensary lighting, branded shelving softly blurred behind. Compact, "
      "clean, premium product-in-situ shot. " + BRAND, "4:3"),
 
     ("tasting-dispensary.jpg", CHREF,
@@ -93,24 +94,29 @@ TARGETS = [
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
     ("popup-set.jpg",
-     ["popup-table-ref2.jpg", "chalice/c7.jpg", "cannagars/godfather.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["popup-table-ref2.jpg", "chalice/c7.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A realistic photograph inside a modern cannabis dispensary. A portable STRETCH-FABRIC "
      "POP-UP COUNTER of the SAME curved hourglass shape as the first reference (a waist-high "
      "counter about 33 inches wide and 40 inches tall with a hard flat top), fully wrapped in "
      "Made in Xiaolin x SYPP red-and-gold printed fabric: a large red-and-gold octagonal "
-     "Xiaolin temple seal, fine gold dragon line-work, a clean 'GET THE CHALICE - SPECIAL "
-     "PRICE' banner and a small 'PAY BY CARD' tag beside a QR code. Resting ON TOP of the "
-     "counter is a SLIM, LOW-PROFILE two-chalice LED tray (lacquer-red and gold, only a couple "
-     "inches thick). " + CHALICE + "TWO Chalice hexagonal bases sit inset in gold-lit cradles "
-     "at the back of the tray with vapor rising; the rest of the slim tray has built-in "
-     "BACKLIT CUTOUT slots holding a generous row of upright Made in Xiaolin cannagars "
-     "(gold-tipped, red-and-gold bands, like the reference) glowing with warm gold backlight, "
-     "plus a brochure slot. The clear glass dome cups lift off the bases. A young Asian woman "
-     "brand ambassador in a Made in Xiaolin tee stands behind the counter handing a clear "
-     "glass dome cup to a customer; another guest sips from a glass dome through a clear straw "
-     "(guests hold only the glass). Warm dispensary lighting, branded shelving softly blurred "
-     "behind. The whole rig is light and portable — counter plus tray pack into one carry bag. "
-     + BRAND, "16:9"),
+     "Xiaolin temple seal and fine gold dragon line-work. Across the TABLE SKIRT (the fabric "
+     "front of the counter) is a clean 'GET THE CHALICE - SPECIAL PRICE' purchase banner "
+     "showing the VISA, Mastercard and American Express credit-card logos and a small QR code "
+     "— buy the Chalice right here, pay by card. Resting ON TOP of the counter is a SLIM, "
+     "LOW-PROFILE two-chalice LED tray (lacquer-red and gold, only a couple inches thick). "
+     + CHALICE + "TWO Chalice hexagonal bases sit DEEPLY INSET and RECESSED FLUSH into the "
+     "tray's gold-lit cradles at the back with vapor rising; the rest of the slim tray has "
+     "built-in BACKLIT CUTOUT slots holding just 3-4 sample Made in Xiaolin joints of "
+     "DIFFERENT SIZES — a large cannagar, a Soldato and a small Bambino, gold-tipped with "
+     "red-and-gold Xiaolin bands like the references — glowing with warm gold backlight, plus "
+     "a brochure slot. The LED tray and its cradles are finished ENTIRELY in Chinese "
+     "lacquer-red and gold (no wood, no black). The brand ambassador is an attractive young "
+     "Asian woman in a fitted Made in Xiaolin tee, standing behind the counter. The two "
+     "CUSTOMERS are a DIVERSE mix of different ethnicities, ages and styles (they must NOT all "
+     "look the same) — each holding ONLY the clear glass DOME cup lifted off its base (just the "
+     "glass dome in hand, not the base, not the whole device), sipping through a clear straw. Warm "
+     "dispensary lighting, branded shelving softly blurred behind. The whole rig is light and "
+     "portable — counter plus tray pack into one carry bag. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
@@ -120,15 +126,16 @@ TARGETS = [
      "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
 
     ("led-topper.jpg",
-     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "cannagars/godfather.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "Museum-style product photograph of the compact Made in Xiaolin x SYPP Cloud Bar LED "
      "TRAY (about 36 x 18 inches): a SLIM, LOW-PROFILE lacquer-red and gold tray only a couple inches thick (light and portable, not a bulky box). The BACK row has TWO circular "
      "gold-lit cradles for the Chalice hexagonal bases (one Chalice seated with its clear glass "
      "dome and a wisp of vapor); the rest of the slim tray is given to built-in BACKLIT CUTOUT "
-     "slots holding a generous row of upright Made in Xiaolin cannagars (gold-tipped, red-and-gold bands, like the reference), glowing with the same warm gold backlight as the "
+     "slots holding just 3-4 sample Made in Xiaolin joints of different sizes — a cannagar, a Soldato and a small Bambino (gold-tipped, red-and-gold Xiaolin bands, like the references) — glowing with the same warm gold backlight as the "
      "cradles, plus a slim brochure slot. The "
-     "red-and-gold octagonal Xiaolin seal on the front face. Clean studio hardware "
-     "photography, dark red-and-gold backdrop, premium. " + BRAND, "4:3"),
+     "red-and-gold octagonal Xiaolin seal on the front face. The entire tray is finished in Chinese "
+     "lacquer-red and gold — no wood, no black surfaces. Clean studio hardware photography, dark "
+     "red-and-gold backdrop, premium. " + BRAND, "4:3"),
 
     ("kit-bag.jpg",
      ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "logo-sypp.png"],
