@@ -191,6 +191,10 @@
   #rail a.on{background:var(--red-br);border-color:var(--red-br);box-shadow:0 0 9px rgba(216,34,47,.8)}
   #prog{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,#d8222f,#f0cf86);z-index:60;width:0;transition:width .2s}
   #hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);animation:fade 3s ease-in-out infinite}
+  #lb{position:fixed;inset:0;background:rgba(8,4,5,.95);display:none;align-items:center;justify-content:center;z-index:200;cursor:zoom-out;padding:3vh 3vw}
+  #lb img,#lb video{max-width:95vw;max-height:94vh;border-radius:6px;box-shadow:0 0 70px rgba(216,34,47,.35)}
+  #lb .x{position:fixed;top:14px;right:24px;color:#f0cf86;font-size:2.4rem;line-height:1;cursor:pointer;z-index:201}
+  .vitrine img,.cover-hero img{cursor:zoom-in}
   @keyframes fade{0%,100%{opacity:.3}50%{opacity:.9}}
 
   @media (max-width:880px){
@@ -214,6 +218,7 @@
 <div id="prog"></div>
 <nav id="rail"></nav>
 <div id="hint">Scroll / ↓ / →</div>
+<div id="lb"><span class="x">✕</span></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe6a8" stop-opacity=".6"/><stop offset="0.42" stop-color="#f0cf86" stop-opacity=".18"/><stop offset="1" stop-color="#d8222f" stop-opacity=".55"/></linearGradient>
@@ -386,7 +391,7 @@
     <div class="grid g3" style="gap:1.1rem">
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/popup-set.jpg?v=17" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Dispensary Pop-Up Set</b>Three units · QR purchase.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/popup-dispensary.jpg?v=13" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Dispensary Pop-Up</b>Branded portable bar.</span></div>
-      <div class="vitrine gframe" style="aspect-ratio:4/3"><video src="reel.mp4?v=3" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover"></video><span class="cap"><b>The Reel · 10s</b>Sampling → walk-away. Tap to play.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><video src="reel.mp4?v=3" controls autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover"></video><span class="cap"><b>The Reel</b>Volume &amp; ⛶ full-screen in the player.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/installation-trays.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Modular Trays</b>Countertop to bar.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/nightlife.jpg?v=10" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Nightlife Lounge</b>Atmospheric centerpiece.</span></div>
       <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/event.jpg?v=7" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Event Activation</b>Gold cloud canopy.</span></div>
@@ -721,6 +726,17 @@
     const id=setInterval(()=>{t+=0.05;let v=40*Math.pow(1.0+t,2.15);counter.textContent=fmt(v);if(v>=18742){counter.textContent=fmt(18742)+'+';clearInterval(id);}},28);}
   const fw=document.querySelector('[data-label="The Flywheel"]');
   if('IntersectionObserver'in window&&fw){new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)ramp();}),{threshold:.5}).observe(fw);}else ramp();
+
+  /* click-to-expand lightbox for all deck images */
+  const lb=document.getElementById('lb');
+  function closeLb(){lb.style.display='none';lb.querySelectorAll('img').forEach(n=>n.remove());}
+  lb.addEventListener('click',closeLb);
+  addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+  document.querySelectorAll('.vitrine img,.cover-hero img').forEach(im=>{
+    im.addEventListener('click',ev=>{ev.stopPropagation();
+      const big=document.createElement('img');big.src=im.currentSrc||im.src;
+      lb.appendChild(big);lb.style.display='flex';});
+  });
 </script>
 </body>
 </html>
