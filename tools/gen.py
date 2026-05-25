@@ -25,16 +25,18 @@ BRAND = (
 # Never the clear Zenco wine-style glasses, never red-liquid goblets, never cups.
 CHALICE = (
     "THE Chalice vaporizer from the reference images is the ONLY device in the "
-    "scene: a tall faceted diamond-shaped CLEAR glass dome with a polished gold "
+    "scene. The Chalice GLASS is a HAND-SIZED faceted diamond-shaped clear glass dome CUP — about "
+    "5 to 6 inches tall, the size of a small tumbler that fits comfortably in one hand (see the "
+    "hand reference for scale) — with a polished gold "
     "rim around the top opening and the red octagonal Xiaolin seal printed on the "
     "glass, seated on a compact hexagonal puck base (black or lacquer-red) with a "
     "small black mouthpiece in the center; luminous warm white-and-gold vapor "
-    "swirls inside the glass and rises from the top. Render this exact device "
-    "design unchanged. STRICT: do NOT include any other vessels — no wine or "
-    "cocktail glasses, no clear tumblers, no red-liquid goblets, no beakers, no "
-    "disposable cups. Only this Chalice vaporizer. "
+    "swirls inside the glass and rises from the top. Keep the glass at correct hand-held scale. "
+    "STRICT: do NOT include any other vessels — no wine or cocktail glasses, no tall vases, no "
+    "wrong-shaped tumblers, no red-liquid goblets, no beakers, no disposable cups. When a guest "
+    "holds it, they hold ONLY this hand-sized faceted glass dome cup. "
 )
-CHREF = ["chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"]
+CHREF = ["chalice/c7.jpg", "chalice/c-hand.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"]
 
 # (filename, [reference local files], prompt, aspect)
 TARGETS = [
@@ -44,7 +46,7 @@ TARGETS = [
      "luminous vapor swirling inside the glass and a wisp rising from the top. " + BRAND, "1:1"),
 
     ("popup-dispensary.jpg",
-     ["popup-table-ref2.jpg", "chalice/c7.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["popup-table-ref2.jpg", "chalice/c7.jpg", "chalice/c-hand.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A clean STANDALONE product photograph (NO people) of the complete Made in Xiaolin x SYPP "
      "Cloud Bar in-store pop-up: a portable stretch-fabric pop-up COUNTER of the same curved "
      "hourglass shape as the first reference (waist-high, hard flat top), tastefully wrapped in "
@@ -75,7 +77,7 @@ TARGETS = [
      "product lighting, red and gold. " + BRAND, "4:3"),
 
     ("nightlife.jpg",
-     ["chalice/c7.jpg", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["chalice/c7.jpg", "chalice/c-hand.jpg", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A warm, upscale cocktail bar at night — a normal stylish bar with a back-bar full of "
      "liquor bottles, cocktail glasses and soft pendant lighting, patrons mingling. Sitting "
      "ON THE BAR next to the bartender is a compact THREE-UNIT Made in Xiaolin x SYPP Cloud "
@@ -97,7 +99,7 @@ TARGETS = [
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
     ("popup-set.jpg",
-     ["popup-table-ref2.jpg", "gen/popup-dispensary.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["popup-table-ref2.jpg", "gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A realistic photograph inside an upscale modern cannabis dispensary. A portable "
      "STRETCH-FABRIC POP-UP COUNTER of the SAME curved hourglass shape as the first reference "
      "(a waist-high counter with a hard flat top), tastefully wrapped in Made in Xiaolin x "
@@ -112,10 +114,12 @@ TARGETS = [
      "small discreet 'Chalice available here' note and a quiet card-payment symbol blended into "
      "the red-and-gold fabric, NOT a loud banner (this is a refined dispensary — understated). "
      "The brand ambassador is an attractive young Asian woman in a fitted Made in Xiaolin tee "
-     "behind the counter. The two CUSTOMERS are a DIVERSE mix of different ethnicities and "
-     "styles (not all the same look) — each holding ONLY the clear glass DOME lifted off its "
-     "base (just the glass in hand, not the base, not the whole device), sipping through a "
-     "clear straw. Warm dispensary lighting, branded shelving softly blurred behind. " + BRAND, "16:9"),
+     "behind the counter. The two CUSTOMERS are diverse — ONE is a man who closely RESEMBLES "
+     "the person in the founder reference photo (same face and features, his signature black "
+     "cap with a small red emblem, sunglasses, a long single braid, black-and-red jacket); the "
+     "other is a different diverse guest. Each holds ONLY the hand-sized clear glass DOME lifted "
+     "off its base (just the glass in hand, not the base, not the whole device), sipping through "
+     "a clear straw. Warm dispensary lighting, branded shelving softly blurred behind. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
@@ -124,8 +128,27 @@ TARGETS = [
      "Xiaolin temple seal as the hero logo on the bar front, a stylish product-launch "
      "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
 
+    ("reel-sample.jpg",
+     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical candid photo inside an upscale cannabis dispensary: the Made in Xiaolin x SYPP "
+     "Cloud Bar pop-up (red-and-gold fabric counter with the LED tray on top, two chalices "
+     "inset, vapor rising) with two diverse customers sampling — ONE a man who closely "
+     "RESEMBLES the person in the founder reference photo (same face, black cap with a small "
+     "red emblem, sunglasses, long single braid, black-and-red jacket) — each holding ONLY the "
+     "hand-sized clear glass dome and sipping through a clear straw, smiling — and a "
+     "young Asian woman brand ambassador in a Made in Xiaolin tee hosting. Warm dispensary "
+     "lighting, real and lively. " + BRAND, "9:16"),
+
+    ("reel-walkaway.jpg",
+     ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical candid photo: a happy young customer walking away from a dispensary checkout "
+     "counter toward camera, holding a boxed Made in Xiaolin CHALICE (the gift box bears the "
+     "red-and-gold octagonal Xiaolin seal) in their hands, smiling, a shopping moment. Warm "
+     "modern dispensary interior softly blurred behind, register and budtender in the "
+     "background. Real, authentic lifestyle photography. " + BRAND, "9:16"),
+
     ("led-topper.jpg",
-     ["gen/popup-dispensary.jpg", "chalice/c7.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["gen/popup-dispensary.jpg", "chalice/c7.jpg", "chalice/c-hand.jpg", "joints/lineup.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A clean close-up product photograph of the Made in Xiaolin x SYPP Cloud Bar LED TOPPER — "
      "the slim low-profile red-and-gold LED tray that fits over and covers the top of the "
      "pop-up counter (exactly the tray shown in the first reference). " + CHALICE + "TWO "
@@ -144,7 +167,7 @@ TARGETS = [
      "kit. Studio product shot, warm premium lighting, dark red-and-gold backdrop. " + BRAND, "4:3"),
 
     ("bag-packed.jpg",
-     ["popup-case-ref.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["popup-case-ref.jpg", "chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "An organized product photograph showing the WHOLE portable Cloud Bar kit as exactly TWO "
      "carry pieces, side by side. (1) A flat oval soft CARRY CASE of the same shape as the "
      "first reference — re-skinned matte black with red-and-gold Xiaolin trim and the octagonal "
