@@ -1,103 +1,138 @@
 #!/usr/bin/env python3
-"""Build the ~10s 9:16 Made in Xiaolin x SYPP Cloud Bar reel (v2).
-4 shots animated via Replicate kling-v1.6-PRO (sip -> pour -> cloud -> walk-away),
-trimmed and stitched with a MiX seal cut-in, a persistent 'Powered by SYPP Cloud
-Bar' corner bug, an end card, and a generated music bed. ffmpeg via imageio_ffmpeg."""
+"""Made in Xiaolin x SYPP Cloud Bar reel (v3) — ~19s 9:16.
+Opens on a MiX logo title card, then cuts to people: wide dispensary pull-back ->
+group sipping -> close sip -> chalice lift -> walk-away with boxed Chalice -> end card.
+Persistent 'Powered by SYPP Cloud Bar' bug, burned-in English subtitles, and the
+psychedelic Chinese pop-rock song. kling-v1.6-pro I2V; ffmpeg via imageio_ffmpeg."""
 import os, sys, subprocess
 from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
 import replicate, requests, imageio_ffmpeg
 
 HERE = Path(__file__).resolve().parent
-IMG = HERE.parent / "img"
-GEN = IMG / "gen"
-VID = IMG / "videos"; VID.mkdir(parents=True, exist_ok=True)
+IMG = HERE.parent / "img"; GEN = IMG/"gen"; VID = IMG/"videos"; REELDIR = IMG/"reel"
+VID.mkdir(parents=True, exist_ok=True)
 FF = imageio_ffmpeg.get_ffmpeg_exe()
-SEAL = IMG / "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"
-BADGE = IMG / "reel" / "badge.png"
-ENDCARD = IMG / "reel" / "endcard.jpg"
-MODEL = "kwaivgi/kling-v1.6-pro"
+SEAL = IMG/"Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"
+BADGE = REELDIR/"badge.png"; ENDCARD = REELDIR/"endcard.jpg"; SONG = VID/"song.mp3"
+# Default to the lower-cost standard model (~$0.20/clip vs ~$0.40 pro). Pass --pro for premium.
+MODEL = "kwaivgi/kling-v1.6-pro" if "--pro" in sys.argv else "kwaivgi/kling-v1.6-standard"
 
-# (still, clip-name, motion prompt, slice seconds)
-CLIPS = [
-    ("reel-sample.jpg", "v2-sample.mp4",
-     "Gentle living motion: the guests sip the cloud through straws and smile, warm vapor "
-     "rises from the chalices, the ambassador gestures warmly. Subtle handheld, no cut.", 2.4),
-    ("reel-pour.jpg", "v2-pour.mp4",
-     "The ambassador lifts the vapor-filled glass dome off its base; dense white-gold cloud "
-     "billows and swirls upward in slow motion. Premium, photoreal, no cut.", 2.2),
-    ("reel-cloud.jpg", "v2-cloud.mp4",
-     "Macro: dense white vapor swirls and curls slowly inside the glass dome, the gold rim "
-     "glints, a slow gentle push-in. Mesmerizing, photoreal, no cut.", 2.1),
-    ("reel-walkaway.jpg", "v2-walk.mp4",
-     "The happy customer walks toward camera, away from the register, holding the boxed "
-     "Chalice, smiling; slow handheld follow, warm bokeh. Photoreal, no cut.", 2.3),
+# still, clip-file, motion, slice-seconds, subtitle
+SHOTS = [
+ ("reel-wide.jpg","v3-wide.mp4",
+  "Slow cinematic camera pull-back / dolly out revealing the whole dispensary, people sip and "
+  "mingle around the Cloud Bar, vapor rising. Gentle, photoreal, no cut.",3.6,
+  "Under the neon, the Cloud Bar opens"),
+ ("reel-group.jpg","v3-group.mp4",
+  "Lively motion: a group of friends sip the cloud through straws, laugh and talk, vapor swirls "
+  "up. Handheld energy, photoreal, no cut.",3.6,
+  "Chalice in hand — every heart opens"),
+ ("reel-sample.jpg","v3-sample.mp4",
+  "The guests sip the cloud and smile, warm vapor rises, the ambassador gestures. Subtle "
+  "handheld, photoreal, no cut.",3.2,
+  "One draw, and we fly to the clouds"),
+ ("reel-lift.jpg","v3-lift.mp4",
+  "A hand lifts the glass dome up and away from the base in slow motion; dense white-gold vapor "
+  "pours and billows down. Mesmerizing, photoreal, no cut.",3.4,
+  "Xiaolin's cloud carries us around"),
+ ("reel-walkaway.jpg","v3-walk.mp4",
+  "The happy customer walks toward camera away from the register holding the small Chalice "
+  "box, smiling; slow handheld follow, warm bokeh. Photoreal, no cut.",2.8,
+  "Take the cloud home with you"),
+ ("reel-home.jpg","v3-home.mp4",
+  "At home on the couch the friends relax and sip the cloud; the customer in front looks right "
+  "at the camera and WINKS with a smile at the end. Warm, gentle, photoreal, no cut.",3.6,
+  "Chalice Cloud Bar — never coming down"),
 ]
-ENDCARD_DUR = 1.4
-MUSIC_PROMPT = ("warm confident cinematic lo-fi hip-hop instrumental, mellow Rhodes keys, soft "
-                "boom-bap drums, subtle oriental plucked strings, premium lounge vibe, no vocals")
+OPENER_DUR=1.0; ENDCARD_DUR=1.6
 
+def ff(a): subprocess.run([FF,"-y",*a],check=True)
 
-def i2v(still, out, motion, force):
-    dest = VID / out
-    if dest.exists() and not force:
-        print("skip", out); return dest
-    url = replicate.files.create(file=open(GEN/still, "rb")).urls["get"]
-    print("I2V(pro)", still, "->", out)
-    o = replicate.run(MODEL, input={"start_image": url, "prompt": motion,
-                                    "duration": 5, "aspect_ratio": "9:16", "cfg_scale": 0.5})
-    t = o[0] if isinstance(o, list) else o
-    data = t.read() if hasattr(t, "read") else requests.get(str(t), timeout=600).content
-    dest.write_bytes(data); print("  saved", len(data)//1024, "KB"); return dest
+def i2v(still,out,motion,force):
+    import re,time
+    dest=VID/out
+    if dest.exists() and not force: print("skip",out); return dest
+    url=replicate.files.create(file=open(GEN/still,"rb")).urls["get"]
+    print("I2V(pro)",still,"->",out)
+    o=None
+    for a in range(1,7):
+        try:
+            o=replicate.run(MODEL,input={"start_image":url,"prompt":motion,"duration":5,
+                                         "aspect_ratio":"9:16","cfg_scale":0.5}); break
+        except Exception as e:
+            if "429" not in str(e) and "throttl" not in str(e).lower(): raise
+            m=re.search(r"in ~?(\d+)\s*s",str(e)); w=max(int(m.group(1))+3,12) if m else 15*a
+            print(f"  throttled {a}/6; wait {w}s"); time.sleep(w)
+    if o is None: raise SystemExit("i2v throttled out")
+    t=o[0] if isinstance(o,list) else o
+    data=t.read() if hasattr(t,"read") else requests.get(str(t),timeout=600).content
+    dest.write_bytes(data); print("  saved",len(data)//1024,"KB"); return dest
 
+def font(sz):
+    for p in ["C:/Windows/Fonts/arialbd.ttf","C:/Windows/Fonts/Arial.ttf"]:
+        try: return ImageFont.truetype(p,sz)
+        except: pass
+    return ImageFont.load_default()
 
-def ff(args): subprocess.run([FF, "-y", *args], check=True)
+def sub_png(txt,path):
+    W,H=1080,150; im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im); f=font(52)
+    tw=d.textlength(txt,font=f); x=(W-tw)//2; y=40
+    for dx in(-3,-2,2,3):
+        for dy in(-3,-2,2,3): d.text((x+dx,y+dy),txt,font=f,fill=(0,0,0,235))
+    d.text((x,y),txt,font=f,fill=(255,255,255,255)); im.save(path)
 
+def opener_png(path):
+    W,H=1080,1920; c=Image.new("RGB",(W,H),(124,13,21)); d=ImageDraw.Draw(c)
+    d.rectangle([26,26,W-26,H-26],outline=(240,207,134),width=3)
+    s=Image.open(SEAL).convert("RGBA"); sw=560; sh=int(s.height*sw/s.width); s=s.resize((sw,sh),Image.LANCZOS)
+    c.paste(s,((W-sw)//2,560),s)
+    f=font(64); t="MADE IN XIAOLIN"; d.text(((W-d.textlength(t,font=f))//2,560+sh+50),t,font=f,fill=(247,239,221))
+    f2=font(40); t2="× SYPP CLOUD BAR"; d.text(((W-d.textlength(t2,font=f2))//2,560+sh+135),t2,font=f2,fill=(240,207,134))
+    c.save(path)
 
-def process(inp, out, slc, seal_cut):
-    seal_ov = (f"[1:v]scale=720:-1[s];[v][s]overlay=(W-w)/2:(H-h)/2:enable='between(t,0,0.7)'[v1];"
-               if seal_cut else "[v]copy[v1];")
-    fc = ("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,"
-          f"fps=30,trim=0:{slc},setpts=PTS-STARTPTS[v];" + seal_ov +
-          "[2:v]scale=470:-1[b];[v1][b]overlay=W-w-46:H-h-58[outv]")
-    ff(["-i",str(inp),"-i",str(SEAL),"-i",str(BADGE),"-filter_complex",fc,
-        "-map","[outv]","-an","-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
+def card_seg(img,dur,out,zoom=True):
+    if zoom:
+        fc=(f"[0:v]scale=1188:2112,zoompan=z='min(zoom+0.0009,1.10)':d={int(dur*30)}:s=1080x1920:fps=30,setsar=1[outv]")
+        ff(["-loop","1","-i",str(img),"-filter_complex",fc,"-map","[outv]","-an","-t",str(dur),
+            "-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
+    else:
+        ff(["-loop","1","-i",str(img),"-vf","scale=1080:1920,setsar=1,fps=30","-an","-t",str(dur),
+            "-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
 
-
-def endcard(out):
-    # slow zoom on the end card
-    fc=(f"[0:v]scale=1188:2112,zoompan=z='min(zoom+0.0008,1.08)':d={int(ENDCARD_DUR*30)}:"
-        "s=1080x1920:fps=30,setsar=1[outv]")
-    ff(["-loop","1","-i",str(ENDCARD),"-filter_complex",fc,"-map","[outv]","-an",
-        "-t",str(ENDCARD_DUR),"-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
-
+def process(inp,out,slc,subpng):
+    fc=("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,"
+        f"fps=30,trim=0:{slc},setpts=PTS-STARTPTS[v];"
+        "[1:v]scale=470:-1[b];[v][b]overlay=W-w-46:H-h-58[vb];"
+        "[vb][2:v]overlay=(W-w)/2:1470[outv]")
+    ff(["-i",str(inp),"-i",str(BADGE),"-i",str(subpng),"-filter_complex",fc,"-map","[outv]",
+        "-an","-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
 
 def main():
-    force = "--force" in sys.argv
+    force="--force" in sys.argv
     if not os.environ.get("REPLICATE_API_TOKEN"): sys.exit("Set REPLICATE_API_TOKEN")
     segs=[]
-    for i,(still,out,motion,slc) in enumerate(CLIPS):
+    # logo opener
+    op_png=REELDIR/"opener.jpg"; opener_png(op_png)
+    op=VID/"_v3opener.mp4"; card_seg(op_png,OPENER_DUR,op,zoom=True); segs.append(op)
+    # people shots
+    for i,(still,out,motion,slc,sub) in enumerate(SHOTS):
         raw=i2v(still,out,motion,force)
-        p=VID/f"_v2seg{i}.mp4"; process(raw,p,slc,seal_cut=(i==0)); segs.append(p)
-    ec=VID/"_v2end.mp4"; endcard(ec); segs.append(ec)
-    lst=VID/"_v2list.txt"; lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in segs))
-    silent=VID/"_v2silent.mp4"
-    ff(["-f","concat","-safe","0","-i",str(lst),"-c","copy",str(silent)])
-    # music
-    music=VID/"_music.mp3"
-    try:
-        print("music: musicgen…")
-        o=replicate.run("meta/musicgen",input={"prompt":MUSIC_PROMPT,"duration":11,
-                        "model_version":"stereo-large","output_format":"mp3","normalization_strategy":"loudness"})
-        t=o[0] if isinstance(o,list) else o
-        music.write_bytes(t.read() if hasattr(t,"read") else requests.get(str(t),timeout=600).content)
-        print("  music", music.stat().st_size//1024,"KB")
-        reel=VID/"reel.mp4"
-        ff(["-i",str(silent),"-i",str(music),"-map","0:v","-map","1:a",
-            "-c:v","copy","-c:a","aac","-b:a","160k","-shortest",
-            "-af","afade=t=out:st=9:d=1",str(reel)])
-    except Exception as e:
-        print("music failed, using silent:",e)
-        reel=VID/"reel.mp4"; ff(["-i",str(silent),"-c","copy",str(reel)])
-    print("REEL v2:", reel, reel.stat().st_size//1024,"KB")
+        sp=VID/f"_v3sub{i}.png"; sub_png(sub,sp)
+        p=VID/f"_v3seg{i}.mp4"; process(raw,p,slc,sp); segs.append(p)
+    # end card
+    ec=VID/"_v3end.mp4"; card_seg(ENDCARD,ENDCARD_DUR,ec,zoom=True); segs.append(ec)
+    lst=VID/"_v3list.txt"; lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in segs))
+    silent=VID/"_v3silent.mp4"; ff(["-f","concat","-safe","0","-i",str(lst),"-c","copy",str(silent)])
+    # duration -> for audio fade
+    import json
+    dur=sum([OPENER_DUR]+[s[3] for s in SHOTS]+[ENDCARD_DUR])
+    reel=VID/"reel.mp4"
+    if SONG.exists():
+        ff(["-i",str(silent),"-i",str(SONG),"-map","0:v","-map","1:a","-c:v","copy","-c:a","aac",
+            "-b:a","192k","-af",f"afade=t=in:st=0:d=0.3,afade=t=out:st={dur-1.0:.1f}:d=1.0","-shortest",str(reel)])
+    else:
+        ff(["-i",str(silent),"-c","copy",str(reel)])
+    print("REEL v3:",reel,reel.stat().st_size//1024,"KB | dur ~",round(dur,1),"s")
 
 if __name__=="__main__": main()
