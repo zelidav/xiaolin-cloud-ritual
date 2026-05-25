@@ -65,13 +65,17 @@ TARGETS = [
      "surface, the small gold octagonal Xiaolin seal etched on the tray. Dramatic premium "
      "product lighting, red and gold. " + BRAND, "4:3"),
 
-    ("nightlife.jpg", CHREF,
-     "A luxury nightlife lounge Cloud Ritual bar finished in lacquer-red and gold with "
-     "warm gold LED underlighting. " + CHALICE + "A row of these identical Chalice "
-     "vaporizers glows along the bar top, vapor rising. Atmospheric low light, elegantly "
-     "dressed guests softly blurred in the background. The red-and-gold octagonal Xiaolin "
-     "temple seal glows on the front of the bar. Cinematic editorial hospitality "
-     "photograph. " + BRAND, "16:9"),
+    ("nightlife.jpg",
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A high-energy upscale New York City nightclub. A long bar runs through the room with a "
+     "glowing warm-gold LED top. " + CHALICE + "A row of these Chalice vaporizers is seated "
+     "INSET into the glowing LED bar top, each in a circular gold-lit cradle, vapor rising. "
+     "Around the bar and on the floor, stylish well-dressed guests are HOLDING the glass "
+     "Chalice cups in their hands and sipping the cloud through clear straws, mingling and "
+     "enjoying — a lively NYC club crowd. The red-and-gold octagonal Xiaolin temple seal "
+     "glows on the front of the bar. Deep lacquer-red and gold with moody club lighting, "
+     "colored light accents, bokeh, a DJ glow in the background. Cinematic nightlife "
+     "photography, atmospheric and energetic. " + BRAND, "16:9"),
 
     ("xiaolin-blend-cart.jpg",
      ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "Photoroom_20241218_174339.jpg"],
