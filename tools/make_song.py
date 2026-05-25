@@ -14,8 +14,10 @@ REEL = VID / "reel.mp4"
 SONG = VID / "song.mp3"
 
 MODEL = "minimax/music-2.6"
-STYLE = ("psychedelic chinese pop rock and roll, fuzzy electric guitars, retro 70s, groovy organ, "
-         "reverb, trippy, mandopop, driving drums, male and female mandarin vocals, catchy hook")
+STYLE = ("psychedelic rock that OPENS with a heavy Jimi-Hendrix-style fuzzy distorted electric "
+         "guitar riff and a powerful pounding drum fill to bring it in, wah-wah, bluesy psychedelic "
+         "lead guitar, hard-driving 70s rock drums, then breaks into catchy Mandarin Chinese "
+         "pop-rock vocals (male and female), reverb, trippy, groovy, big and energetic")
 LYRICS = ("霓虹灯下 云吧门开\n圣杯在手 心都打开\n"
           "吸一口 飞上云端\n小林的云 带我环绕\n"
           "圣杯云吧 醉在云海\n飘啊飘 不想下来\n"
