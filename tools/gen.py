@@ -93,10 +93,12 @@ TARGETS = [
      "RECESSED into the glowing LED tabletop, each sitting in a circular cradle ringed with "
      "warm gold LED light exactly like the reference trays, vapor gently rising. A friendly "
      "brand ambassador in tasteful Made in Xiaolin branded apparel stands behind the podium "
-     "welcoming guests. Two or three relaxed, well-dressed customers lean in and sample — "
-     "sipping the cloud from the glass Chalice cups through clear straws, smiling and casual. "
-     "Natural dispensary lighting, wood shelving with product softly blurred behind. Real, "
-     "authentic, understated lifestyle photography — not a staged studio set. " + BRAND, "16:9"),
+     "welcoming guests. Two well-dressed customers are each clearly HOLDING one of these glass "
+     "Chalice cups up in their hands — gripping the cup, lifting it toward the face and sipping "
+     "the rising cloud through a clear straw, smiling and relaxed. The cups are unmistakably in "
+     "the guests' hands (hands wrapped around the glass), NOT resting on the podium. Natural "
+     "dispensary lighting, wood shelving with product softly blurred behind. Real, authentic, "
+     "understated lifestyle photography — not a staged studio set. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
