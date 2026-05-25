@@ -88,23 +88,23 @@ TARGETS = [
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
     ("popup-set.jpg",
-     ["installation-img-1024x1015.jpg", "img-events-popup-sypp.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A realistic candid documentary photograph inside a warm modern cannabis dispensary. "
-     "In the foreground is a Made in Xiaolin Cloud Bar pop-up — a portable podium re-skinned "
-     "in glossy lacquer-red with subtle gold trim and a glowing warm-gold LED top. On the "
-     "front skirt: the red-and-gold octagonal Xiaolin temple seal, a small neat QR code, and "
-     "a clean gold promo banner reading 'GET THE CHALICE - SPECIAL PRICE' with a small "
-     "'PAY BY CARD' tag beside the QR code. "
-     + CHALICE + "Three of these Chalices' hexagonal bases stay seated INSET and RECESSED "
-     "into the glowing LED tabletop in circular gold-lit cradles, vapor gently rising — but "
-     "the clear glass dome cups LIFT OFF the bases. The brand ambassador is a stylish, pretty "
-     "young Asian woman wearing a fitted Made in Xiaolin branded t-shirt with the octagonal "
-     "Xiaolin seal, standing behind the podium with a warm smile. Two hip, younger guests in "
-     "trendy streetwear each hold ONLY the clear glass dome cup in their hands (never the "
-     "base): one young woman sips the cloud from her glass through a clear straw while "
-     "handing a second glass dome to her friend — a natural sharing moment. They hold the "
-     "glass only. Natural dispensary lighting, wood shelving softly blurred behind. Real, "
-     "authentic, understated lifestyle photography — not a staged studio set. " + BRAND, "16:9"),
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Photoroom_20241218_174339.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A realistic candid photograph inside a warm modern cannabis dispensary. A long "
+     "RECTANGULAR Made in Xiaolin Cloud Bar pop-up TABLE, heavily branded in glossy "
+     "lacquer-red and gold — a large red-and-gold octagonal Xiaolin temple seal and fine "
+     "gold dragon line-work across the front skirt, plus a clean gold promo banner reading "
+     "'GET THE CHALICE - SPECIAL PRICE' and a small 'PAY BY CARD' tag beside a QR code. The "
+     "tabletop is split into two halves. ONE HALF is a glowing warm-gold LED cloud-bar "
+     "section: " + CHALICE + "three Chalice hexagonal bases sit INSET in circular gold-lit "
+     "cradles with vapor rising, and the clear glass dome cups lift off. The OTHER HALF is a "
+     "raised display area presenting a neat row of Made in Xiaolin pre-rolls / cannagars "
+     "(gold-tipped, with red-and-gold Xiaolin bands, like the reference) standing in a holder, "
+     "plus a small fan of glossy brochures and cards. A pretty young Asian woman brand "
+     "ambassador in a fitted Made in Xiaolin tee stands behind the table with a warm smile; "
+     "two hip younger guests hold ONLY the clear glass domes (never the base) and sip the "
+     "cloud through clear straws — one woman sharing/handing her glass to a friend. Warm "
+     "dispensary lighting, wood shelving softly blurred behind. Real, authentic lifestyle "
+     "photography. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
