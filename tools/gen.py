@@ -73,6 +73,16 @@ TARGETS = [
      "temple seal glows on the front of the bar. Cinematic editorial hospitality "
      "photograph. " + BRAND, "16:9"),
 
+    ("xiaolin-blend-cart.jpg",
+     ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "Photoroom_20241218_174339.jpg"],
+     "A premium product photograph of a sleek Made in Xiaolin branded 510-thread vape "
+     "cartridge standing upright, filled with glowing golden amber live-rosin oil, with "
+     "a glossy black ceramic mouthpiece and a small red-and-gold octagonal Xiaolin temple "
+     "seal printed on the cartridge. Beside it stands an elegant lacquer-red gift box "
+     "stamped with the gold octagonal Xiaolin seal and fine gold dragon line-work. Deep "
+     "lacquer-red and gold setting, warm museum product lighting, single hero subject. "
+     "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
+
     ("retail-bar-guide.jpg", CHREF,
      "A cinematic retail hero photograph: a stylish, elegant female ritual guide "
      "standing behind a premium Made in Xiaolin Cloud Bar — a glossy lacquer-red "
