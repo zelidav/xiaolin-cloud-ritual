@@ -19,69 +19,66 @@ BRAND = (
     "rich red and gold throughout, no gibberish text or watermarks."
 )
 
-# The ONLY vessel allowed in any scene is the Chalice (the red-glass diamond
-# vessel from hero-chalice.jpg). Never the clear Zenco-style cups, never
-# disposable cups, never wine/cocktail glassware.
+# The ONLY device allowed in any scene is the real Made in Xiaolin CHALICE
+# vaporizer (shopxiaolin.com/products/chalice): a clear faceted glass dome with
+# a gold rim, the red octagonal Xiaolin seal on the glass, on a hexagonal base.
+# Never the clear Zenco wine-style glasses, never red-liquid goblets, never cups.
 CHALICE = (
-    "THE Chalice from the first reference image is the ONLY vessel in the scene: "
-    "a faceted diamond-cut glass chalice with a deep red glass core and warm gold "
-    "vapor rising from the top, seated on a turned black-walnut base with a warm "
-    "gold LED ring. Render this exact chalice, unchanged. STRICT: do NOT include "
-    "any other cups, clear glasses, tumblers, wine or cocktail glasses, beakers, "
-    "or disposable cups — only the red Chalice. "
+    "THE Chalice vaporizer from the reference images is the ONLY device in the "
+    "scene: a tall faceted diamond-shaped CLEAR glass dome with a polished gold "
+    "rim around the top opening and the red octagonal Xiaolin seal printed on the "
+    "glass, seated on a compact hexagonal puck base (black or lacquer-red) with a "
+    "small black mouthpiece in the center; luminous warm white-and-gold vapor "
+    "swirls inside the glass and rises from the top. Render this exact device "
+    "design unchanged. STRICT: do NOT include any other vessels — no wine or "
+    "cocktail glasses, no clear tumblers, no red-liquid goblets, no beakers, no "
+    "disposable cups. Only this Chalice vaporizer. "
 )
+CHREF = ["chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"]
 
 # (filename, [reference local files], prompt, aspect)
 TARGETS = [
-    ("hero-chalice.jpg",
-     ["glass-on-yellow_2-1-503x1024.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "Museum-style luxury product photograph of THE faceted diamond glass ritual "
-     "chalice vessel from the first reference image — red glass core, gold vapor — "
-     "sitting on a turned black-walnut wood base with a warm gold LED ring glowing "
-     "beneath it, on a deep lacquer-red surface with soft gold rim light and a thin "
-     "wisp of pale vapor rising. The red-and-gold octagonal Xiaolin temple seal from "
-     "the second image is subtly embossed on the base. " + BRAND, "1:1"),
+    ("hero-chalice.jpg", CHREF,
+     "Museum-style luxury product photograph. " + CHALICE + "It stands on a deep "
+     "lacquer-red surface with fine gold dragon line-work and warm gold rim light, "
+     "luminous vapor swirling inside the glass and a wisp rising from the top. " + BRAND, "1:1"),
 
-    ("popup-dispensary.jpg",
-     ["gen/hero-chalice.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+    ("popup-dispensary.jpg", CHREF,
      "A premium portable Cloud Bar pop-up podium, glossy lacquer-red with gold trim and "
      "a warm gold LED rim, the red-and-gold octagonal Xiaolin temple seal printed large "
-     "and centered on the front. " + CHALICE + "Two or three of these identical red "
-     "Chalices stand on top of the podium. It is set inside an upscale modern cannabis "
-     "dispensary with warm walnut shelving and premium retail lighting. " + BRAND, "4:3"),
+     "and centered on the front. " + CHALICE + "Two or three of these identical Chalice "
+     "vaporizers stand on top of the podium, vapor rising. Set inside an upscale modern "
+     "cannabis dispensary with warm walnut shelving and premium retail lighting. " + BRAND, "4:3"),
 
-    ("tasting-dispensary.jpg",
-     ["gen/hero-chalice.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+    ("tasting-dispensary.jpg", CHREF,
      "An elegant ritual guide hosting a customer through a cloud tasting at a curved "
      "premium dispensary counter. " + CHALICE + "On the counter, a lacquer-red LED tray "
-     "with gold trim holds two or three of these identical red Chalices. The red-and-gold "
-     "octagonal Xiaolin temple seal appears on a small display card. Warm, intimate, "
-     "premium retail interior with red and gold accent lighting. Candid editorial "
-     "photograph. " + BRAND, "4:3"),
+     "with gold trim holds two or three of these identical Chalice vaporizers, vapor "
+     "rising. The red-and-gold octagonal Xiaolin temple seal appears on a small display "
+     "card. Warm, intimate, premium retail interior with red and gold accent lighting. "
+     "Candid editorial photograph. " + BRAND, "4:3"),
 
-    ("installation-trays.jpg",
-     ["gen/hero-chalice.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+    ("installation-trays.jpg", CHREF,
      "Museum-style product display of a modular Cloud Bar LED tray, lacquer-red with gold "
-     "metallic trim and a warm gold LED underglow. " + CHALICE + "Three identical red "
-     "Chalices sit on the tray. Arranged on a black-and-red lacquer surface, the small "
-     "gold octagonal Xiaolin seal etched on the tray. Dramatic premium product lighting, "
-     "red and gold. " + BRAND, "4:3"),
+     "metallic trim and a warm gold LED underglow. " + CHALICE + "Three identical Chalice "
+     "vaporizers sit on the tray, vapor rising. Arranged on a black-and-red lacquer "
+     "surface, the small gold octagonal Xiaolin seal etched on the tray. Dramatic premium "
+     "product lighting, red and gold. " + BRAND, "4:3"),
 
-    ("nightlife.jpg",
-     ["gen/hero-chalice.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+    ("nightlife.jpg", CHREF,
      "A luxury nightlife lounge Cloud Ritual bar finished in lacquer-red and gold with "
-     "warm gold LED underlighting. " + CHALICE + "A row of these identical red Chalices "
-     "glows along the bar top. Atmospheric low light, elegantly dressed guests softly "
-     "blurred in the background. The red-and-gold octagonal Xiaolin temple seal glows on "
-     "the front of the bar. Cinematic editorial hospitality photograph. " + BRAND, "16:9"),
+     "warm gold LED underlighting. " + CHALICE + "A row of these identical Chalice "
+     "vaporizers glows along the bar top, vapor rising. Atmospheric low light, elegantly "
+     "dressed guests softly blurred in the background. The red-and-gold octagonal Xiaolin "
+     "temple seal glows on the front of the bar. Cinematic editorial hospitality "
+     "photograph. " + BRAND, "16:9"),
 
-    ("event.jpg",
-     ["gen/hero-chalice.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+    ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
-     "cloud canopy. " + CHALICE + "A row of these identical red Chalices glows along the "
-     "bar. Fine gold dragon line-work, the red-and-gold octagonal Xiaolin temple seal as "
-     "the hero logo on the bar front, a stylish product-launch setting with warm gold "
-     "light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
+     "cloud canopy. " + CHALICE + "A row of these identical Chalice vaporizers glows along "
+     "the bar, vapor rising. Fine gold dragon line-work, the red-and-gold octagonal "
+     "Xiaolin temple seal as the hero logo on the bar front, a stylish product-launch "
+     "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
 ]
 
 
