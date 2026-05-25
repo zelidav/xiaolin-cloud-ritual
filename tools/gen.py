@@ -139,13 +139,14 @@ TARGETS = [
      "kit. Studio product shot, warm premium lighting, dark red-and-gold backdrop. " + BRAND, "4:3"),
 
     ("bag-packed.jpg",
-     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["popup-table-ref2.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "An organized kit flat-lay: an open Made in Xiaolin x SYPP branded shoulder bag with the "
-     "complete Cloud Bar pop-up kit packed neatly inside and laid beside it — the folded "
-     "lacquer-red pop-up table cover, the red-and-gold LED topper panel, several Chalice "
-     "vaporizers (clear glass domes + hexagonal bases), a few 510 carts in small branded "
-     "boxes, and a stack of brochures. Everything fits in one carry bag. Premium overhead kit "
-     "photograph, red and gold, warm lighting. " + BRAND, "16:9"),
+     "complete portable Cloud Bar kit packed neatly inside and laid beside it — the rolled-up "
+     "red-and-gold stretch-fabric pop-up COUNTER cover, the SLIM low-profile two-chalice LED "
+     "tray (lacquer-red and gold, only a couple inches thick), exactly TWO Chalice vaporizers "
+     "(clear glass domes + hexagonal bases), a few 510 carts in small SYPP pod boxes, and a "
+     "stack of brochures. Everything fits in one carry bag. Premium overhead kit photograph, "
+     "red and gold, warm lighting. " + BRAND, "16:9"),
 
     ("ambassador-carry.jpg",
      ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
