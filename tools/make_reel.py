@@ -22,28 +22,28 @@ MODEL = "kwaivgi/kling-v1.6-pro" if "--pro" in sys.argv else "kwaivgi/kling-v1.6
 SHOTS = [
  ("reel-wide.jpg","v3-wide.mp4",
   "Slow cinematic camera pull-back / dolly out revealing the whole dispensary, people sip and "
-  "mingle around the Cloud Bar, vapor rising. Gentle, photoreal, no cut.",3.6,
-  "Under the neon, the Cloud Bar opens"),
+  "mingle around the Cloud Bar; vapor only from the cups they hold, the empty bases are off. Gentle, photoreal, no cut.",3.6,
+  "霓虹灯下 云吧门开 || Under the neon, the Cloud Bar opens"),
  ("reel-group.jpg","v3-group.mp4",
   "Lively motion: a group of friends sip the cloud through straws, laugh and talk, vapor swirls "
   "up. Handheld energy, photoreal, no cut.",3.6,
-  "Chalice in hand — every heart opens"),
+  "圣杯在手 心都打开 || Chalice in hand — every heart opens"),
  ("reel-sample.jpg","v3-sample.mp4",
-  "The guests sip the cloud and smile, warm vapor rises, the ambassador gestures. Subtle "
+  "The guests sip the cloud and smile, vapor wisping from the cups they hold (empty bases off), the ambassador gestures. Subtle "
   "handheld, photoreal, no cut.",3.2,
-  "One draw, and we fly to the clouds"),
+  "吸一口 飞上云端 || One draw, and we fly to the clouds"),
  ("reel-lift.jpg","v3-lift.mp4",
   "A hand lifts the glass dome up and away from the base in slow motion; dense white-gold vapor "
   "pours and billows down. Mesmerizing, photoreal, no cut.",3.4,
-  "Xiaolin's cloud carries us around"),
+  "小林的云 带我环绕 || Xiaolin's cloud carries us around"),
  ("reel-walkaway.jpg","v3-walk.mp4",
   "The happy customer walks toward camera away from the register holding the small Chalice "
   "box, smiling; slow handheld follow, warm bokeh. Photoreal, no cut.",2.8,
-  "Take the cloud home with you"),
+  "把云带回家 || Take the cloud home with you"),
  ("reel-home.jpg","v3-home.mp4",
   "At home on the couch the friends relax and sip the cloud; the customer in front looks right "
   "at the camera and WINKS with a smile at the end. Warm, gentle, photoreal, no cut.",3.6,
-  "Chalice Cloud Bar — never coming down"),
+  "圣杯云吧 不想下来 || Chalice Cloud Bar — never coming down"),
 ]
 OPENER_DUR=1.0; ENDCARD_DUR=1.6
 
@@ -75,12 +75,24 @@ def font(sz):
         except: pass
     return ImageFont.load_default()
 
+def cfont(sz):
+    for p in ["C:/Windows/Fonts/msyhbd.ttc","C:/Windows/Fonts/msyh.ttc","C:/Windows/Fonts/simhei.ttf","C:/Windows/Fonts/simsun.ttc"]:
+        try: return ImageFont.truetype(p,sz)
+        except: pass
+    return font(sz)
+
 def sub_png(txt,path):
-    W,H=1080,150; im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im); f=font(52)
-    tw=d.textlength(txt,font=f); x=(W-tw)//2; y=40
-    for dx in(-3,-2,2,3):
-        for dy in(-3,-2,2,3): d.text((x+dx,y+dy),txt,font=f,fill=(0,0,0,235))
-    d.text((x,y),txt,font=f,fill=(255,255,255,255)); im.save(path)
+    # txt = "中文 || English" -> gold Chinese over white English, with shadow
+    cn,en=(txt.split("||")+[""])[:2]; cn=cn.strip(); en=en.strip()
+    W,H=1080,220; im=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(im)
+    def line(t,fnt,y,fill):
+        tw=d.textlength(t,font=fnt); x=(W-tw)//2
+        for dx in(-3,-2,2,3):
+            for dy in(-3,-2,2,3): d.text((x+dx,y+dy),t,font=fnt,fill=(0,0,0,235))
+        d.text((x,y),t,font=fnt,fill=fill)
+    if cn: line(cn,cfont(66),16,(247,223,160,255))   # gold Chinese (top)
+    if en: line(en,font(40),116,(255,255,255,255))   # white English (below)
+    im.save(path)
 
 def opener_png(path):
     W,H=1080,1920; c=Image.new("RGB",(W,H),(124,13,21)); d=ImageDraw.Draw(c)
@@ -104,7 +116,7 @@ def process(inp,out,slc,subpng):
     fc=("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,"
         f"fps=30,trim=0:{slc},setpts=PTS-STARTPTS[v];"
         "[1:v]scale=470:-1[b];[v][b]overlay=W-w-46:H-h-58[vb];"
-        "[vb][2:v]overlay=(W-w)/2:1470[outv]")
+        "[vb][2:v]overlay=(W-w)/2:1400[outv]")
     ff(["-i",str(inp),"-i",str(BADGE),"-i",str(subpng),"-filter_complex",fc,"-map","[outv]",
         "-an","-c:v","libx264","-pix_fmt","yuv420p","-r","30",str(out)])
 

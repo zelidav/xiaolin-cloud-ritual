@@ -137,14 +137,17 @@ TARGETS = [
      "Cinematic nightlife event photography. " + BRAND, "16:9"),
 
     ("reel-sample.jpg",
-     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "gen/reel-walkaway.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A vertical candid photo inside an upscale cannabis dispensary: the Made in Xiaolin x SYPP "
      "Cloud Bar pop-up (red-and-gold fabric counter with the LED tray on top, two chalices "
-     "inset, vapor rising) with two diverse customers sampling — ONE a man who closely "
+     "inset, switched OFF with no vapor from empty bases) with two customers sampling — ONE a man who closely "
      "RESEMBLES the person in the founder reference photo (same face, black cap with a small "
-     "red emblem, sunglasses, long single braid, black-and-red jacket) — each holding ONLY the "
+     "red emblem, sunglasses, long single braid, black-and-red jacket), and the OTHER is the "
+     "SAME recurring cute young blonde white woman from the last reference photo (same face, "
+     "long blonde hair) — each holding ONLY the "
      "hand-sized clear glass dome and sipping through a clear straw, smiling — and a "
-     "young Asian woman brand ambassador in a Made in Xiaolin tee hosting. Warm dispensary "
+     "young woman brand ambassador in a Made in Xiaolin tee hosting. The guests are a real "
+     "American mix (white, Black, Latino, Asian) — not all the same ethnicity. Warm dispensary "
      "lighting, real and lively. " + BRAND, "9:16"),
 
     ("reel-pour.jpg",
@@ -163,13 +166,17 @@ TARGETS = [
      "it. Dark red-and-gold bokeh behind, dramatic premium product lighting, photoreal. " + BRAND, "9:16"),
 
     ("reel-wide.jpg",
-     ["gen/popup-dispensary.jpg", "gen/popup-set.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["gen/popup-dispensary.jpg", "gen/popup-set.jpg", "gen/reel-walkaway.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A vertical WIDE establishing shot, camera pulled back to show a full upscale cannabis "
      "DISPENSARY interior: warm wood-and-black shelving filled with Made in Xiaolin red-and-gold "
      "products, and in the center the Made in Xiaolin x SYPP Cloud Bar pop-up with its LED tray. "
-     "A group of diverse young customers sample around it — holding hand-sized clear glass dome "
-     "cups, vapor rising — with an Asian woman ambassador in a Made in Xiaolin tee hosting. "
-     "Spacious real dispensary, warm inviting light, lots of people. " + BRAND, "9:16"),
+     "A group of diverse young customers — a real American mix (white, Black, Latino, Asian), "
+     "not all the same ethnicity — sample around it, holding hand-sized clear glass dome "
+     "cups with vapor only INSIDE the cups; the chalice bases on the tray are switched OFF (no "
+     "vapor from empty bases) — with a young woman ambassador in a Made in Xiaolin tee hosting. "
+     "Prominent among the guests is the SAME recurring cute young blonde white woman from the "
+     "last reference photo (same face, long blonde hair, cream sweater) — she is one of the "
+     "customers here. Spacious real dispensary, warm inviting light, lots of people. " + BRAND, "9:16"),
 
     ("reel-lift.jpg",
      ["chalice/c-hand.jpg", "chalice/c7.jpg", "gen/popup-dispensary.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
@@ -180,28 +187,32 @@ TARGETS = [
      "premium, photoreal. " + BRAND, "9:16"),
 
     ("reel-group.jpg",
-     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A vertical candid photo: a lively GROUP of four or five diverse young people gathered "
+     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "gen/reel-walkaway.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical candid photo: a lively GROUP of four or five diverse young people (a real "
+     "American mix — white, Black, Latino, Asian, not all the same ethnicity), including the "
+     "SAME recurring cute young blonde white woman from the last reference photo (same face, "
+     "long blonde hair) front and center, gathered "
      "around the Made in Xiaolin x SYPP Cloud Bar in an upscale dispensary lounge — several of "
      "them HOLDING small hand-sized clear glass dome cups and sipping vapor through straws, "
-     "laughing and socializing together; an Asian woman ambassador in a Made in Xiaolin tee "
+     "laughing and socializing together; a young woman ambassador in a Made in Xiaolin tee "
      "hosting. STRICT: every glass is small and hand-sized; do NOT put any oversized or giant "
-     "chalice in the scene; the chalices on the tray are small. Warm, energetic, real lifestyle "
+     "chalice in the scene; the chalices on the tray are small and switched OFF (no vapor from empty bases) — vapor only inside the cups guests hold. Warm, energetic, real lifestyle "
      "photography, lots of people in the action. " + BRAND, "9:16"),
 
     ("reel-home.jpg",
-     ["chalice/c-hand.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A vertical cozy lifestyle photo: a young customer relaxing at home on a couch with two "
-     "friends, enjoying the Made in Xiaolin Chalice together. He holds ONLY the small "
+     ["chalice/c-hand.jpg", "chalice/c7.jpg", "gen/reel-walkaway.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical cozy lifestyle photo: the SAME recurring cute young blonde white woman from the "
+     "reference photo (same face, long blonde hair) relaxing at home on a couch with two "
+     "friends (a diverse mix), enjoying the Made in Xiaolin Chalice together. She holds ONLY the small "
      "hand-sized clear glass DOME cup (about the size of a small tumbler, lifted off and "
-     "separated from any base — NO base in his hand, not the whole device), soft vapor inside, "
+     "separated from any base — NO base in her hand, not the whole device), soft vapor inside, "
      "sipping through a clear straw. Keep the glass SMALL and correctly scaled to the hand. "
-     "Warm living-room light, plants and modern decor. The customer in front looks straight at "
+     "Warm living-room light, plants and modern decor. The woman in front looks straight at "
      "the camera and WINKS playfully with a smile. Real, warm lifestyle photography. " + BRAND, "9:16"),
 
     ("reel-walkaway.jpg",
      ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A vertical candid photo: a happy young customer walking away from a dispensary checkout "
+     "A vertical candid photo: a happy cute young white woman walking away from a dispensary checkout "
      "counter toward camera, carrying a SMALL Made in Xiaolin Chalice box in one hand — the "
      "box is compact (about the size of a small shoebox, since the Chalice is a hand-sized "
      "device), with the red-and-gold octagonal Xiaolin seal on it. Smiling, a shopping moment. "
