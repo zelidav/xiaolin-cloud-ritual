@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Image Review — Made in Xiaolin × SYPP Cloud Bar</title>
+<link rel="icon" href="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#f6edd8;--ink:#3a1a16;--mute:#7a5848;--red:#b3121f;--gold:#a9791a;--card:#fffaf0;--line:rgba(140,16,24,.2)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#f6edd8;color:var(--ink);font-family:'Manrope',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+  header{padding:2.2rem 6vw 1.4rem;border-bottom:2px solid var(--line);position:sticky;top:0;background:#f6edd8;z-index:10;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
+  header img{height:46px}
+  header h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.9rem;color:var(--red);line-height:1}
+  header .sub{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:.2rem}
+  header .actions{margin-left:auto;display:flex;gap:.7rem;flex-wrap:wrap}
+  .btn{font:inherit;font-weight:600;font-size:.78rem;letter-spacing:.04em;border:1px solid var(--red);color:var(--red);background:none;border-radius:3px;padding:.6em 1.1em;cursor:pointer;transition:.2s}
+  .btn:hover{background:var(--red);color:#fff}
+  .btn.primary{background:var(--red);color:#fff}.btn.primary:hover{background:#8c0d16}
+  main{padding:2rem 6vw 6rem;max-width:1300px;margin:0 auto}
+  .intro{color:var(--mute);font-size:.95rem;max-width:60ch;margin-bottom:1.8rem;line-height:1.55}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.6rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 6px 22px rgba(90,8,14,.08);display:flex;flex-direction:column}
+  .card .imgwrap{position:relative;background:#2a0a0e;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .card .imgwrap img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+  .card .missing{color:#e7c9ad;font-size:.8rem;letter-spacing:.08em;padding:2rem;text-align:center}
+  .card .body{padding:1.1rem 1.2rem 1.3rem}
+  .card h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--red);margin-bottom:.15rem}
+  .card .where{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.6rem}
+  .card .prompt{font-size:.78rem;color:var(--mute);line-height:1.45;margin-bottom:.9rem;max-height:4.4em;overflow:auto}
+  .verdict{display:flex;gap:.4rem;margin-bottom:.7rem}
+  .verdict label{flex:1;text-align:center;font-size:.72rem;font-weight:600;padding:.5em;border:1px solid var(--line);border-radius:3px;cursor:pointer;user-select:none;transition:.15s}
+  .verdict input{display:none}
+  .verdict label.keep{color:#1d7a3a}.verdict label.regen{color:#b3121f}.verdict label.tweak{color:#a9791a}
+  .verdict input:checked + label.keep{background:#1d7a3a;color:#fff;border-color:#1d7a3a}
+  .verdict input:checked + label.regen{background:#b3121f;color:#fff;border-color:#b3121f}
+  .verdict input:checked + label.tweak{background:#a9791a;color:#fff;border-color:#a9791a}
+  .card textarea{width:100%;font:inherit;font-size:.82rem;border:1px solid var(--line);border-radius:3px;padding:.6em;resize:vertical;min-height:3.2em;background:#fff;color:var(--ink)}
+  .card textarea::placeholder{color:#b09a8a}
+  #out{position:fixed;inset:0;background:rgba(40,6,8,.92);z-index:50;display:none;align-items:center;justify-content:center;padding:5vw}
+  #out .panel{background:#fffaf0;border-radius:8px;max-width:760px;width:100%;max-height:84vh;display:flex;flex-direction:column;overflow:hidden}
+  #out .panel h2{font-family:'Cormorant Garamond',serif;color:var(--red);padding:1.2rem 1.4rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  #out textarea{flex:1;border:0;padding:1.2rem 1.4rem;font:inherit;font-size:.84rem;resize:none;color:var(--ink)}
+  #out .row{padding:1rem 1.4rem;border-top:1px solid var(--line);display:flex;gap:.7rem;justify-content:flex-end}
+  #lightbox{position:fixed;inset:0;background:rgba(10,2,3,.95);z-index:60;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+  #lightbox img{max-width:92vw;max-height:92vh;border-radius:4px;box-shadow:0 0 60px rgba(216,34,47,.3)}
+  .saved{font-size:.7rem;color:#1d7a3a;font-weight:600;opacity:0;transition:.3s}
+  .saved.on{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt="" />
+  <div>
+    <h1>Image Review</h1>
+    <div class="sub">Made in Xiaolin × SYPP · Cloud Bar mockups</div>
+  </div>
+  <div class="actions">
+    <span class="saved" id="saved">saved ✓</span>
+    <a class="btn" href="index.html">← Back to deck</a>
+    <button class="btn primary" onclick="exportFeedback()">Export feedback</button>
+  </div>
+</header>
+<main>
+  <p class="intro">Each card is a generated mockup (or its fallback). Mark <b>Keep</b>, <b>Regenerate</b>, or <b>Tweak</b>, add a note on what to change, then hit <b>Export feedback</b> — it copies a summary to your clipboard you can paste straight back to me. Notes auto-save in this browser. Click any image to enlarge.</p>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div id="out"><div class="panel"><h2>Your feedback <button class="btn" onclick="document.getElementById('out').style.display='none'">close</button></h2><textarea id="outtext" readonly></textarea><div class="row"><button class="btn" onclick="copyOut()">Copy to clipboard</button></div></div></div>
+<div id="lightbox" onclick="this.style.display='none'"><img id="lbimg" src="" alt=""/></div>
+
+<script>
+  // Mirrors tools/gen.py TARGETS — where each image is used + the prompt intent.
+  const ITEMS = [
+    {f:"gen/hero-chalice.jpg", title:"The Chalice", where:"Slide 03 · The Chalice / Environments", prompt:"Museum product shot — faceted diamond glass chalice, red glass core + gold vapor, black-walnut base with gold LED ring, Xiaolin seal embossed, deep red ground."},
+    {f:"gen/popup-dispensary.jpg", title:"Dispensary Pop-Up", where:"Slide 04 · Cloud Bar / Environments", prompt:"Portable Cloud Bar podium re-skinned lacquer-red + gold with large Xiaolin seal on the front, chalices on top, inside an upscale dispensary."},
+    {f:"gen/tasting-dispensary.jpg", title:"Guided Tasting", where:"Slide 12 · Backbone / Environments", prompt:"Ritual guide hosting a customer at a curved dispensary counter, red+gold LED tray of chalices, Xiaolin seal on a card, warm retail interior."},
+    {f:"gen/installation-trays.jpg", title:"Modular LED Trays", where:"Slide 04 · Cloud Bar / Environments", prompt:"Modular Cloud Bar LED trays in lacquer-red + gold trim, warm gold underglow, chalices on walnut bases, dramatic product lighting."},
+    {f:"gen/nightlife.jpg", title:"Nightlife Lounge", where:"Slide 04 · Cloud Bar / Environments", prompt:"Luxury nightlife lounge cloud bar, lacquer-red + gold, warm LED underlight, glowing chalices, Xiaolin seal on the bar front, blurred guests."},
+    {f:"gen/event.jpg", title:"Event Activation", where:"Environments", prompt:"Premium event activation cloud bar under a gold cloud canopy, gold dragon line-work, Xiaolin seal hero logo, product-launch setting."},
+  ];
+
+  const grid = document.getElementById('grid');
+  function key(f){return 'xiaolin-review:'+f;}
+  ITEMS.forEach(it=>{
+    const saved = JSON.parse(localStorage.getItem(key(it.f))||'{}');
+    const card=document.createElement('div');card.className='card';
+    card.innerHTML=`
+      <div class="imgwrap">
+        <img src="${it.f}?v=${Date.now()}" alt="${it.title}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'missing',textContent:'not generated yet — will appear after the batch finishes'}))" onclick="lb(this.src)"/>
+      </div>
+      <div class="body">
+        <h3>${it.title}</h3>
+        <div class="where">${it.where}</div>
+        <div class="prompt">${it.prompt}</div>
+        <div class="verdict">
+          <input type="radio" name="v_${it.f}" id="k_${it.f}" value="Keep" ${saved.v==='Keep'?'checked':''}><label class="keep" for="k_${it.f}">Keep</label>
+          <input type="radio" name="v_${it.f}" id="r_${it.f}" value="Regenerate" ${saved.v==='Regenerate'?'checked':''}><label class="regen" for="r_${it.f}">Regenerate</label>
+          <input type="radio" name="v_${it.f}" id="t_${it.f}" value="Tweak" ${saved.v==='Tweak'?'checked':''}><label class="tweak" for="t_${it.f}">Tweak</label>
+        </div>
+        <textarea placeholder="What to change? (e.g. 'more gold', 'seal bigger', 'real dispensary background')">${saved.note||''}</textarea>
+      </div>`;
+    grid.appendChild(card);
+    const save=()=>{const v=(card.querySelector('input:checked')||{}).value||'';const note=card.querySelector('textarea').value;localStorage.setItem(key(it.f),JSON.stringify({v,note}));flashSaved();};
+    card.querySelectorAll('input').forEach(i=>i.addEventListener('change',save));
+    card.querySelector('textarea').addEventListener('input',()=>{clearTimeout(window._t);window._t=setTimeout(save,500);});
+  });
+
+  let st;function flashSaved(){const s=document.getElementById('saved');s.classList.add('on');clearTimeout(st);st=setTimeout(()=>s.classList.remove('on'),1200);}
+  function lb(src){document.getElementById('lbimg').src=src;document.getElementById('lightbox').style.display='flex';}
+  function exportFeedback(){
+    let lines=["Made in Xiaolin × SYPP — image feedback\n"];
+    ITEMS.forEach(it=>{const s=JSON.parse(localStorage.getItem(key(it.f))||'{}');if(s.v||s.note){lines.push(`• ${it.title} (${it.f}): ${s.v||'—'}${s.note?' — '+s.note:''}`);}});
+    if(lines.length===1)lines.push("(no feedback entered yet)");
+    document.getElementById('outtext').value=lines.join("\n");
+    document.getElementById('out').style.display='flex';
+  }
+  function copyOut(){const t=document.getElementById('outtext');t.select();navigator.clipboard.writeText(t.value).then(()=>{},()=>{document.execCommand('copy');});}
+</script>
+</body>
+</html>

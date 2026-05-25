@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""Generate Made in Xiaolin x SYPP Cloud Bar mockups via Replicate nano-banana
+(Gemini 2.5 Flash Image). Re-skins the real SYPP reference photos into the
+lacquer-red + gold Made in Xiaolin brand. Idempotent; --force to overwrite."""
+import os, sys, argparse, time
+from pathlib import Path
+import replicate, requests
+
+HERE = Path(__file__).resolve().parent
+IMG = HERE.parent / "img"
+GEN = IMG / "gen"; GEN.mkdir(parents=True, exist_ok=True)
+
+BRAND = (
+    "Made in Xiaolin brand identity: deep glossy lacquer-red and warm gold, "
+    "black walnut wood, the brand's octagonal temple seal logo (a red octagon "
+    "with a gold border and a white calligraphic monogram inside), occasional "
+    "fine gold dragon line-work. Premium, ceremonial, luxury cannabis "
+    "hospitality. Warm cinematic lighting, editorial product photography, "
+    "rich red and gold throughout, no gibberish text or watermarks."
+)
+
+# (filename, [reference local files], prompt, aspect)
+TARGETS = [
+    ("hero-chalice.jpg",
+     ["glass-on-yellow_2-1-503x1024.png", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "Museum-style luxury product photograph of THE faceted diamond glass ritual "
+     "chalice vessel from the first reference image — red glass core, gold vapor — "
+     "sitting on a turned black-walnut wood base with a warm gold LED ring glowing "
+     "beneath it, on a deep lacquer-red surface with soft gold rim light and a thin "
+     "wisp of pale vapor rising. The red-and-gold octagonal Xiaolin temple seal from "
+     "the second image is subtly embossed on the base. " + BRAND, "1:1"),
+
+    ("popup-dispensary.jpg",
+     ["img-events-popup-sypp.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "glass-on-yellow_2-1-503x1024.png"],
+     "A premium portable Cloud Bar pop-up podium of the same rounded shape as the "
+     "first reference, re-skinned in glossy lacquer-red with gold trim and a warm "
+     "gold LED rim. The red-and-gold octagonal Xiaolin temple seal is printed large "
+     "and centered on the front of the podium. Faceted glass chalice vessels glowing "
+     "warm gold stand on top. It is set inside an upscale modern cannabis dispensary "
+     "with warm wood shelving and premium retail lighting. " + BRAND, "4:3"),
+
+    ("tasting-dispensary.jpg",
+     ["cannabis-tasting-img-826x1024.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "An elegant ritual guide hosting a customer through a cloud tasting at a curved "
+     "premium dispensary counter, like the reference scene. On the counter, an LED-lit "
+     "tray finished in lacquer-red with gold trim holds several faceted glass chalice "
+     "vessels glowing warm gold. The red-and-gold octagonal Xiaolin temple seal appears "
+     "on a small display card. Warm, intimate, premium retail interior with red and gold "
+     "accent lighting. Candid editorial photograph. " + BRAND, "4:3"),
+
+    ("installation-trays.jpg",
+     ["installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "Museum-style product display of modular Cloud Bar LED trays, like the references, "
+     "re-skinned in lacquer-red with gold metallic trim and a warm gold LED underglow, "
+     "each tray holding faceted glass chalice vessels on black-walnut bases, arranged on "
+     "a black-and-red lacquer surface, the small gold octagonal Xiaolin seal etched on a "
+     "tray. Dramatic premium product lighting, red and gold. " + BRAND, "4:3"),
+
+    ("nightlife.jpg",
+     ["img-events-popup-sypp.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A luxury nightlife lounge Cloud Ritual bar finished in lacquer-red and gold with "
+     "warm gold LED underlighting, faceted glass chalices glowing on top, atmospheric "
+     "low light, elegantly dressed guests softly blurred in the background. The "
+     "red-and-gold octagonal Xiaolin temple seal glows on the front of the bar. "
+     "Cinematic editorial hospitality photograph, red and gold. " + BRAND, "16:9"),
+
+    ("event.jpg",
+     ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "glass-on-yellow_2-1-503x1024.png"],
+     "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
+     "cloud canopy, faceted glass chalice vessels glowing warm gold along the bar, fine "
+     "gold dragon line-work, the red-and-gold octagonal Xiaolin temple seal as the hero "
+     "logo on the bar front, a stylish product-launch setting with warm gold light and "
+     "blurred guests. Cinematic editorial. " + BRAND, "16:9"),
+]
+
+
+def upload(name):
+    with open(IMG / name, "rb") as f:
+        return replicate.files.create(file=f).urls["get"]
+
+
+def run_retry(model, inp, tries=4):
+    for a in range(1, tries + 1):
+        try:
+            return replicate.run(model, input=inp)
+        except Exception as e:
+            if a == tries or not any(k in str(e).lower() for k in ("429", "throttl", "rate")):
+                raise
+            time.sleep(10 * a)
+
+
+def save(out, dest):
+    t = out[0] if isinstance(out, list) else out
+    if hasattr(t, "read"):
+        dest.write_bytes(t.read())
+    else:
+        dest.write_bytes(requests.get(str(t), timeout=120).content)
+    return dest.stat().st_size
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--only", help="substring of filename to limit")
+    args = ap.parse_args()
+    if not os.environ.get("REPLICATE_API_TOKEN"):
+        sys.exit("Set REPLICATE_API_TOKEN")
+
+    cache = {}
+    def url(n):
+        if n not in cache:
+            cache[n] = upload(n)
+        return cache[n]
+
+    todo = [t for t in TARGETS if (not args.only or args.only in t[0])]
+    todo = [t for t in todo if args.force or not (GEN / t[0]).exists()]
+    print(f"Generating {len(todo)} image(s) via google/nano-banana…")
+    for i, (fn, refs, prompt, ar) in enumerate(todo, 1):
+        dest = GEN / fn
+        try:
+            inp = {"prompt": prompt, "image_input": [url(r) for r in refs],
+                   "output_format": "jpg", "aspect_ratio": ar}
+            out = run_retry("google/nano-banana", inp)
+            kb = save(out, dest) // 1024
+            print(f"[{i}/{len(todo)}] OK {fn} ({kb} KB)")
+        except Exception as e:
+            print(f"[{i}/{len(todo)}] FAIL {fn}: {e}")
+        time.sleep(0.3)
+
+
+if __name__ == "__main__":
+    main()
