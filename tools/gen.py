@@ -88,23 +88,23 @@ TARGETS = [
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
     ("popup-set.jpg",
-     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Photoroom_20241218_174339.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     ["chalice/c7.jpg", "cannagars/godfather.png", "installation-img-1024x1015.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A realistic candid photograph inside a warm modern cannabis dispensary. A long "
-     "RECTANGULAR Made in Xiaolin Cloud Bar pop-up TABLE, heavily branded in glossy "
+     "RECTANGULAR Made in Xiaolin x SYPP Cloud Bar pop-up TABLE, heavily branded in glossy "
      "lacquer-red and gold — a large red-and-gold octagonal Xiaolin temple seal and fine "
-     "gold dragon line-work across the front skirt, plus a clean gold promo banner reading "
+     "gold dragon line-work across the front skirt, with a clean gold promo banner reading "
      "'GET THE CHALICE - SPECIAL PRICE' and a small 'PAY BY CARD' tag beside a QR code. The "
-     "tabletop is split into two halves. ONE HALF is a glowing warm-gold LED cloud-bar "
-     "section: " + CHALICE + "three Chalice hexagonal bases sit INSET in circular gold-lit "
-     "cradles with vapor rising, and the clear glass dome cups lift off. The OTHER HALF is a "
-     "raised display area presenting a neat row of Made in Xiaolin pre-rolls / cannagars "
-     "(gold-tipped, with red-and-gold Xiaolin bands, like the reference) standing in a holder, "
-     "plus a small fan of glossy brochures and cards. A pretty young Asian woman brand "
-     "ambassador in a fitted Made in Xiaolin tee stands behind the table with a warm smile; "
-     "two hip younger guests hold ONLY the clear glass domes (never the base) and sip the "
-     "cloud through clear straws — one woman sharing/handing her glass to a friend. Warm "
-     "dispensary lighting, wood shelving softly blurred behind. Real, authentic lifestyle "
-     "photography. " + BRAND, "16:9"),
+     "lacquer-red and gold LED TOPPER spans the table. Along the BACK row, " + CHALICE
+     + "three Chalice hexagonal bases sit INSET in circular gold-lit cradles with vapor "
+     "rising, shifted toward the back. Built INTO the front of the topper are integrated "
+     "display holders: an upright row of Made in Xiaolin pre-roll cannagars (gold-tipped, "
+     "red-and-gold Xiaolin bands, like the reference) in a milled holder, and angled slots "
+     "holding glossy brochures and cards. The clear glass dome cups lift off the bases. The "
+     "brand ambassador — a pretty young Asian woman in a fitted Made in Xiaolin tee — is "
+     "HANDING one clear glass dome cup across the table to a customer; another guest stands "
+     "sipping the cloud from a glass dome through a clear straw. Guests hold ONLY the glass "
+     "dome, never the base. Warm dispensary lighting, branded shelving softly blurred behind. "
+     "Real, authentic lifestyle photography. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
@@ -112,6 +112,41 @@ TARGETS = [
      "the bar, vapor rising. Fine gold dragon line-work, the red-and-gold octagonal "
      "Xiaolin temple seal as the hero logo on the bar front, a stylish product-launch "
      "setting with warm gold light and blurred guests. Cinematic editorial. " + BRAND, "16:9"),
+
+    ("led-topper.jpg",
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "Museum-style product photograph of the Made in Xiaolin x SYPP Cloud Bar LED TOPPER — a "
+     "sleek rectangular lacquer-red and gold panel with several circular gold-lit LED cradles "
+     "that hold the Chalice hexagonal bases, glowing warm gold. The red-and-gold octagonal "
+     "Xiaolin seal is on the panel. One Chalice base sits in a cradle with its clear glass "
+     "dome and a wisp of vapor. Clean studio hardware photography on a dark red-and-gold "
+     "surface, premium. " + BRAND, "4:3"),
+
+    ("kit-bag.jpg",
+     ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png", "logo-sypp.png"],
+     "Premium product photograph of a Made in Xiaolin x SYPP branded SHOULDER / DUFFEL carry "
+     "bag — structured matte-black with lacquer-red and gold accents, the red-and-gold "
+     "octagonal Xiaolin seal embroidered on the side and a small tasteful 'SYPP CLOUD BAR' "
+     "wordmark, gold zippers and a padded shoulder strap. Designed to hold the full pop-up "
+     "kit. Studio product shot, warm premium lighting, dark red-and-gold backdrop. " + BRAND, "4:3"),
+
+    ("bag-packed.jpg",
+     ["installation-img-1024x1015.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "An organized kit flat-lay: an open Made in Xiaolin x SYPP branded shoulder bag with the "
+     "complete Cloud Bar pop-up kit packed neatly inside and laid beside it — the folded "
+     "lacquer-red pop-up table cover, the red-and-gold LED topper panel, several Chalice "
+     "vaporizers (clear glass domes + hexagonal bases), a few 510 carts in small branded "
+     "boxes, and a stack of brochures. Everything fits in one carry bag. Premium overhead kit "
+     "photograph, red and gold, warm lighting. " + BRAND, "16:9"),
+
+    ("ambassador-carry.jpg",
+     ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A candid lifestyle photograph: a stylish young Asian woman brand ambassador in a fitted "
+     "Made in Xiaolin tee walking into a modern cannabis dispensary, carrying the branded "
+     "Made in Xiaolin x SYPP shoulder bag (with the red-and-gold octagonal Xiaolin seal) "
+     "easily over one shoulder, smiling, arriving to set up. Conveys 'one person carries the "
+     "whole bar and deploys in minutes'. Warm dispensary interior softly blurred, real, "
+     "authentic. " + BRAND, "4:3"),
 ]
 
 
