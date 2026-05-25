@@ -62,15 +62,17 @@ TARGETS = [
      "Chinese lacquer-red and gold. " + BRAND, "4:3"),
 
     ("tasting-dispensary.jpg",
-     ["chalice/c7.jpg", "chalice/c-hand.jpg", "chris-louie.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "The MAIN SUBJECT is a well-dressed man in a sharp tailored suit who closely RESEMBLES the "
-     "person in the founder reference photo (same face and features) — he stands at a curved "
-     "premium dispensary counter sampling a Cloud Ritual, holding ONE hand-sized clear glass "
-     "dome and sipping through a clear straw, smiling. Behind the counter, a young Asian woman "
-     "ritual guide in a Made in Xiaolin tee hosts him. " + CHALICE + "On the counter a "
-     "lacquer-red LED tray with gold trim holds two hand-sized Chalices, vapor rising, and a "
-     "small red-and-gold octagonal Xiaolin seal display card. Warm, intimate, premium retail "
-     "interior, red and gold accent lighting. Candid editorial photograph. " + BRAND, "4:3"),
+     ["chris-louie.jpg", "chalice/c-hand.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "The MAIN SUBJECT is the man shown in the FIRST reference photo — Chris, the Made in "
+     "Xiaolin founder. Keep his EXACT real likeness: same face, features, complexion and hair; "
+     "do NOT substitute a generic white man, render HIM. He is sampling a Cloud Ritual at the "
+     "counter of a modern cannabis DISPENSARY (real dispensary: wood-and-glass display shelves "
+     "with cannabis jars, boxes and products behind him), holding ONE hand-sized clear glass "
+     "dome cup and sipping through a clear straw, smiling, nicely dressed. A young Asian woman "
+     "ritual guide in a Made in Xiaolin tee hosts him from behind the counter. " + CHALICE
+     + "On the counter, a small lacquer-red LED tray holds two hand-sized Chalices (the glasses "
+     "are small, the size of a hand — keep scale correct), vapor rising, plus a small Xiaolin "
+     "seal card. Warm, candid, real dispensary retail photograph. " + BRAND, "4:3"),
 
     ("installation-trays.jpg", CHREF,
      "Museum-style product display of a modular Cloud Bar LED tray, lacquer-red with gold "
@@ -141,6 +143,21 @@ TARGETS = [
      "hand-sized clear glass dome and sipping through a clear straw, smiling — and a "
      "young Asian woman brand ambassador in a Made in Xiaolin tee hosting. Warm dispensary "
      "lighting, real and lively. " + BRAND, "9:16"),
+
+    ("reel-pour.jpg",
+     ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical close shot at the Made in Xiaolin x SYPP Cloud Bar: the brand ambassador's "
+     "hands lifting a hand-sized clear glass DOME cup off its red hexagonal base on the "
+     "red-and-gold LED tray — the glass dome is filling with dense swirling white-and-gold "
+     "vapor, gold rim catching the light, red octagon Xiaolin seal on the glass. Warm "
+     "dispensary, shallow depth of field, photoreal. " + BRAND, "9:16"),
+
+    ("reel-cloud.jpg",
+     ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A vertical macro close-up of a single hand-sized Made in Xiaolin Chalice glass DOME cup "
+     "filled with dense, beautifully swirling white vapor, the polished gold rim catching "
+     "light and the small red octagonal Xiaolin seal on the glass, a clear straw resting in "
+     "it. Dark red-and-gold bokeh behind, dramatic premium product lighting, photoreal. " + BRAND, "9:16"),
 
     ("reel-walkaway.jpg",
      ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
