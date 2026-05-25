@@ -146,23 +146,26 @@ TARGETS = [
      "kit. Studio product shot, warm premium lighting, dark red-and-gold backdrop. " + BRAND, "4:3"),
 
     ("bag-packed.jpg",
-     ["popup-table-ref2.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "An organized kit flat-lay: an open Made in Xiaolin x SYPP branded shoulder bag with the "
-     "complete portable Cloud Bar kit packed neatly inside and laid beside it — the rolled-up "
-     "red-and-gold stretch-fabric pop-up COUNTER cover, the SLIM low-profile two-chalice LED "
-     "tray (lacquer-red and gold, only a couple inches thick), exactly TWO Chalice vaporizers "
-     "(clear glass domes + hexagonal bases), a few 510 carts in small SYPP pod boxes, and a "
-     "stack of brochures. Everything fits in one carry bag. Premium overhead kit photograph, "
-     "red and gold, warm lighting. " + BRAND, "16:9"),
+     ["popup-case-ref.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "An organized product photograph showing the WHOLE portable Cloud Bar kit as exactly TWO "
+     "carry pieces, side by side. (1) A flat oval soft CARRY CASE of the same shape as the "
+     "first reference — re-skinned matte black with red-and-gold Xiaolin trim and the octagonal "
+     "seal, with a padded carry handle — lying open to reveal the folded red-and-gold "
+     "stretch-fabric pop-up counter and its hard oval tabletop nested inside. (2) Beside it, "
+     "the branded Made in Xiaolin x SYPP shoulder DUFFEL, open, holding the SLIM two-chalice "
+     "LED tray, two Chalice vaporizers (clear glass domes + hexagonal bases), a few 510 carts "
+     "in small SYPP pod boxes, and a stack of brochures. Together these two bags are the entire "
+     "kit. Premium overhead product photograph, red and gold, warm lighting. " + BRAND, "16:9"),
 
     ("ambassador-carry.jpg",
-     ["Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A candid lifestyle photograph: a stylish young Asian woman brand ambassador in a fitted "
-     "Made in Xiaolin tee walking into a modern cannabis dispensary, carrying the branded "
-     "Made in Xiaolin x SYPP shoulder bag (with the red-and-gold octagonal Xiaolin seal) "
-     "easily over one shoulder, smiling, arriving to set up. Conveys 'one person carries the "
-     "whole bar and deploys in minutes'. Warm dispensary interior softly blurred, real, "
-     "authentic. " + BRAND, "4:3"),
+     ["popup-case-ref.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A candid lifestyle photograph: an attractive young Asian woman brand ambassador in a "
+     "fitted Made in Xiaolin tee walking into a modern cannabis dispensary carrying the ENTIRE "
+     "kit herself — the flat oval pop-up counter CARRY CASE (matte black with the red-and-gold "
+     "Xiaolin seal, like the reference) in one hand, and the branded Made in Xiaolin x SYPP "
+     "shoulder DUFFEL over the other shoulder. Smiling, easy, arriving to set up. Conveys 'the "
+     "whole bar in two bags, one person, deploys in minutes'. Warm dispensary interior softly "
+     "blurred, real, authentic. " + BRAND, "4:3"),
 ]
 
 
