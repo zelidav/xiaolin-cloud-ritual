@@ -85,7 +85,7 @@
 
   const grid = document.getElementById('grid');
   function key(f){return 'xiaolin-review:'+f;}
-  ITEMS.forEach(it=>{
+  ITEMS.forEach((it,i)=>{
     const saved = JSON.parse(localStorage.getItem(key(it.f))||'{}');
     const card=document.createElement('div');card.className='card';
     card.innerHTML=`
@@ -97,15 +97,15 @@
         <div class="where">${it.where}</div>
         <div class="prompt">${it.prompt}</div>
         <div class="verdict">
-          <input type="radio" name="v_${it.f}" id="k_${it.f}" value="Keep" ${saved.v==='Keep'?'checked':''}><label class="keep" for="k_${it.f}">Keep</label>
-          <input type="radio" name="v_${it.f}" id="r_${it.f}" value="Regenerate" ${saved.v==='Regenerate'?'checked':''}><label class="regen" for="r_${it.f}">Regenerate</label>
-          <input type="radio" name="v_${it.f}" id="t_${it.f}" value="Tweak" ${saved.v==='Tweak'?'checked':''}><label class="tweak" for="t_${it.f}">Tweak</label>
+          <input type="radio" name="v_${i}" id="k_${i}" value="Keep" ${saved.v==='Keep'?'checked':''}><label class="keep" for="k_${i}">Keep</label>
+          <input type="radio" name="v_${i}" id="r_${i}" value="Regenerate" ${saved.v==='Regenerate'?'checked':''}><label class="regen" for="r_${i}">Regenerate</label>
+          <input type="radio" name="v_${i}" id="t_${i}" value="Tweak" ${saved.v==='Tweak'?'checked':''}><label class="tweak" for="t_${i}">Tweak</label>
         </div>
-        <textarea placeholder="What to change? (e.g. 'more gold', 'seal bigger', 'real dispensary background')">${saved.note||''}</textarea>
+        <textarea placeholder="What to change? (e.g. 'more gold', 'seal bigger', 'people sampling')">${saved.note||''}</textarea>
       </div>`;
     grid.appendChild(card);
     const save=()=>{const v=(card.querySelector('input:checked')||{}).value||'';const note=card.querySelector('textarea').value;localStorage.setItem(key(it.f),JSON.stringify({v,note}));flashSaved();};
-    card.querySelectorAll('input').forEach(i=>i.addEventListener('change',save));
+    card.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',save));
     card.querySelector('textarea').addEventListener('input',()=>{clearTimeout(window._t);window._t=setTimeout(save,500);});
   });
 

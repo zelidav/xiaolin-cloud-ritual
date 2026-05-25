@@ -84,16 +84,19 @@ TARGETS = [
      "STRICT: only the cartridge and its box, no other devices, no gibberish text. " + BRAND, "1:1"),
 
     ("popup-set.jpg",
-     ["img-events-popup-sypp.jpg", "chalice/c7.jpg", "chalice/c1.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
-     "A realistic retail photograph of a Made in Xiaolin Cloud Bar pop-up display "
-     "standing on the floor of a modern cannabis dispensary. The pop-up is a portable "
-     "podium of the same rounded tapered shape as the first reference podium, re-skinned "
-     "in glossy lacquer-red with subtle gold trim and a warm gold LED rim, the red-and-gold "
-     "octagonal Xiaolin temple seal and a small neat QR code printed on the front skirt. "
-     + CHALICE + "Exactly three of these Chalice vaporizers stand in a row on top of the "
-     "podium, vapor gently rising. Warm dispensary retail lighting, wood shelving with "
-     "product softly blurred behind. Understated, premium, realistic — a tasteful in-store "
-     "pop-up, not a theatrical stage. " + BRAND, "4:3"),
+     ["installation-img-1024x1015.jpg", "img-events-popup-sypp.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
+     "A realistic candid documentary photograph inside a warm modern cannabis dispensary. "
+     "In the foreground is a Made in Xiaolin Cloud Bar pop-up — a portable podium re-skinned "
+     "in glossy lacquer-red with subtle gold trim, the red-and-gold octagonal Xiaolin temple "
+     "seal and a small neat QR code on the front skirt, with a glowing warm-gold LED top. "
+     + CHALICE + "Exactly three of these Chalice vaporizers are seated SLIGHTLY INSET and "
+     "RECESSED into the glowing LED tabletop, each sitting in a circular cradle ringed with "
+     "warm gold LED light exactly like the reference trays, vapor gently rising. A friendly "
+     "brand ambassador in tasteful Made in Xiaolin branded apparel stands behind the podium "
+     "welcoming guests. Two or three relaxed, well-dressed customers lean in and sample — "
+     "sipping the cloud from the glass Chalice cups through clear straws, smiling and casual. "
+     "Natural dispensary lighting, wood shelving with product softly blurred behind. Real, "
+     "authentic, understated lifestyle photography — not a staged studio set. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
