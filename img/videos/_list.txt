@@ -1,0 +1,2 @@
+file 'C:/Users/zelid/xiaolin-cloud-ritual/img/videos/_proc0.mp4'
+file 'C:/Users/zelid/xiaolin-cloud-ritual/img/videos/_proc1.mp4'

@@ -152,8 +152,10 @@ TARGETS = [
      "A clean close-up product photograph of the Made in Xiaolin x SYPP Cloud Bar LED TOPPER — "
      "the slim low-profile red-and-gold LED tray that fits over and covers the top of the "
      "pop-up counter (exactly the tray shown in the first reference). " + CHALICE + "TWO "
-     "Chalice hexagonal bases sit DEEPLY INSET and RECESSED into gold-lit cradles set toward "
-     "the BACK with vapor rising; built-in BACKLIT inset slots hold 3-4 different-sized Made in "
+     "COMPLETE assembled Chalices — each a hand-sized clear glass DOME cup seated ON TOP of its "
+     "hexagonal base — sit inset in the gold-lit cradles toward the BACK, with vapor swirling "
+     "INSIDE each glass dome. Every base has its glass dome ON it (do NOT show empty bases and "
+     "do NOT show a loose glass off to the side). Built-in BACKLIT inset slots hold 3-4 different-sized Made in "
      "Xiaolin joints (a cannagar, a Soldato and a small Bambino) and a few cards, with a small "
      "brochure holder beside them. The tray is all Chinese lacquer-red and gold (no wood, no "
      "black). Warm, real-world product lighting on a clean surface, premium. " + BRAND, "4:3"),
