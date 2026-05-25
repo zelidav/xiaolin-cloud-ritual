@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Made in Xiaolin × SYPP Cloud Bar — The Xiaolin Cloud Ritual Experience</title>
+<meta name="description" content="The Xiaolin Cloud Ritual Experience — Luxury Cannabis Hospitality Powered by SYPP Cloud Bar." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --black:#08080a;
+    --char:#101013;
+    --panel:#16161a;
+    --panel-2:#1d1d22;
+    --line:rgba(214,200,182,.14);
+    --white:#f4efe7;
+    --mute:#9b958c;
+    --smoke:#6f6c70;
+    --amber:#e0a861;
+    --amber-glow:#f4c585;
+    --red:#a83341;
+    --metal:linear-gradient(135deg,#cfc6b8 0%,#8d857a 45%,#e9e1d4 60%,#827a6f 100%);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:var(--sans);
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .deck{
+    height:100vh;
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+  }
+  .deck::-webkit-scrollbar{width:0}
+  .slide{
+    position:relative;
+    min-height:100vh;
+    width:100%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:6.5vh 8vw;
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.03);
+  }
+  /* ---------- atmospheric backdrops ---------- */
+  .smoke{
+    position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 78% 35%, rgba(224,168,97,.10), transparent 60%),
+      radial-gradient(50% 60% at 15% 80%, rgba(168,51,65,.08), transparent 60%),
+      radial-gradient(80% 80% at 50% 120%, rgba(120,116,124,.10), transparent 70%);
+  }
+  .grain{
+    position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .slide > .inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto}
+
+  /* ---------- typography ---------- */
+  .kicker{
+    font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--amber);font-weight:500;margin-bottom:1.6rem;
+  }
+  .kicker .num{color:var(--smoke);margin-right:1.1em}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,7vw,6.4rem);line-height:.98;letter-spacing:-.01em}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.6vw,3.9rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:1.6rem}
+  h3{font-weight:600;font-size:1.02rem;letter-spacing:.02em}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.45rem);font-weight:200;line-height:1.55;color:#d8d2c8;max-width:46ch}
+  p{font-weight:300;line-height:1.62;color:var(--mute)}
+  .em{color:var(--white)}
+  .amber{color:var(--amber)}
+  .serif-i{font-family:var(--serif);font-style:italic;color:var(--amber-glow)}
+  .hr{height:1px;background:var(--line);border:0;margin:1.8rem 0}
+  .small{font-size:.8rem;letter-spacing:.04em}
+  .tag{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:.42em 1.1em;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+
+  /* ---------- cover ---------- */
+  #cover{align-items:center;text-align:center;background:radial-gradient(120% 90% at 50% 50%,#141318 0%,#08080a 70%)}
+  #cover .inner{display:flex;flex-direction:column;align-items:center}
+  .marque{display:flex;align-items:center;gap:1.4rem;font-size:.74rem;letter-spacing:.4em;text-transform:uppercase;color:var(--mute);margin-bottom:3.2rem}
+  .marque .x{color:var(--amber);font-family:var(--serif);font-style:italic;font-size:1.1rem;letter-spacing:0}
+  #cover h1{font-size:clamp(2.8rem,9vw,7.6rem)}
+  #cover .sub{margin-top:1.8rem;font-size:clamp(1rem,2vw,1.5rem);font-weight:200;color:#cdc6bb;letter-spacing:.02em}
+  #cover .foot{margin-top:3.4rem;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--smoke)}
+
+  /* ---------- chalice SVG glow ---------- */
+  .chalice-stage{position:relative;width:min(34vw,360px);margin:0 auto 2.2rem;filter:drop-shadow(0 0 60px rgba(224,168,97,.22))}
+  .chalice-stage svg{width:100%;height:auto;display:block}
+  @keyframes drift{0%{transform:translateY(0) scaleX(1);opacity:.5}50%{transform:translateY(-14px) scaleX(1.06);opacity:.85}100%{transform:translateY(0) scaleX(1);opacity:.5}}
+  .cloud-anim{transform-origin:center;animation:drift 7s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+  .underglow{animation:pulse 5s ease-in-out infinite}
+
+  /* ---------- layout helpers ---------- */
+  .grid{display:grid;gap:2.2rem}
+  .g2{grid-template-columns:1.05fr .95fr;align-items:center}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .col-head{display:flex;align-items:baseline;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+
+  .card{background:linear-gradient(160deg,var(--panel) 0%,var(--char) 100%);border:1px solid var(--line);border-radius:14px;padding:1.7rem 1.6rem;position:relative;overflow:hidden}
+  .card:before{content:"";position:absolute;left:0;top:0;height:100%;width:2px;background:linear-gradient(var(--amber),transparent)}
+  .card .n{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--amber);margin-bottom:.7rem;display:block}
+  .card h3{margin-bottom:.55rem}
+  .card p{font-size:.86rem;line-height:1.55}
+
+  ul.clean{list-style:none}
+  ul.clean li{position:relative;padding-left:1.4em;margin:.62em 0;color:var(--mute);font-size:.92rem;line-height:1.5}
+  ul.clean li:before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border:1px solid var(--amber);transform:rotate(45deg)}
+
+  .mock{border:1px solid var(--line);border-radius:12px;background:linear-gradient(150deg,#15151a,#0c0c0e);position:relative;overflow:hidden;min-height:200px;display:flex;align-items:flex-end;padding:1.2rem}
+  .mock:after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 60% 25%,rgba(224,168,97,.16),transparent 60%);pointer-events:none}
+  .mock .cap{position:relative;z-index:2;font-size:.72rem;letter-spacing:.08em;color:#b8b0a4;line-height:1.4}
+  .mock .cap b{color:var(--amber);font-weight:600;display:block;letter-spacing:.18em;text-transform:uppercase;font-size:.64rem;margin-bottom:.3em}
+
+  /* journey */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .flow .step{background:var(--char);padding:1.5rem 1.3rem;position:relative}
+  .flow .step .s{font-family:var(--serif);font-style:italic;font-size:1.8rem;color:var(--amber);line-height:1}
+  .flow .step h3{margin:.6rem 0 .4rem;font-size:.94rem}
+  .flow .step p{font-size:.78rem;line-height:1.45}
+
+  /* tiers */
+  .tier{background:linear-gradient(165deg,var(--panel),var(--char));border:1px solid var(--line);border-radius:14px;padding:1.9rem 1.7rem;display:flex;flex-direction:column}
+  .tier.feature{border-color:rgba(224,168,97,.4);box-shadow:0 0 50px rgba(224,168,97,.08)}
+  .tier .t-k{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:.9rem}
+  .tier h3{font-family:var(--serif);font-weight:300;font-style:normal;font-size:1.6rem;margin-bottom:.9rem;letter-spacing:0}
+  .tier p{font-size:.84rem;margin-bottom:1.1rem}
+
+  /* revenue layers */
+  .layer{display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.5rem;background:linear-gradient(100deg,var(--char),transparent);margin-bottom:.9rem}
+  .layer .ln{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--amber);min-width:1.6em;text-align:center}
+  .layer h3{font-size:1rem;margin-bottom:.25rem}
+  .layer p{font-size:.82rem;line-height:1.45}
+  .layer .who{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);white-space:nowrap;text-align:right}
+  .layer .who b{display:block;color:var(--amber-glow);font-weight:600;font-size:.74rem;letter-spacing:.14em;margin-bottom:.2em}
+
+  /* flywheel */
+  .wheel-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center}
+  .wheel{position:relative;width:100%;max-width:480px;margin:0 auto}
+
+  /* footer brand bar present on content slides */
+  .brandbar{position:absolute;left:8vw;right:8vw;bottom:3vh;z-index:3;display:flex;justify-content:space-between;align-items:center;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--smoke)}
+  .brandbar .mark{color:var(--mute);font-weight:600}
+
+  /* nav + progress */
+  #rail{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:11px}
+  #rail a{width:7px;height:7px;border-radius:50%;border:1px solid var(--smoke);transition:.3s}
+  #rail a.on{background:var(--amber);border-color:var(--amber);box-shadow:0 0 10px var(--amber)}
+  #prog{position:fixed;left:0;top:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--amber-glow));z-index:60;width:0;transition:width .2s}
+  #hint{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:50;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--smoke);animation:fade 3s ease-in-out infinite}
+  @keyframes fade{0%,100%{opacity:.3}50%{opacity:.9}}
+
+  /* closing */
+  #close{align-items:center;text-align:center;background:radial-gradient(120% 90% at 50% 60%,#16140f 0%,#08080a 72%)}
+  #close h1{font-size:clamp(2.2rem,6vw,5rem)}
+
+  @media (max-width:860px){
+    .slide{padding:7vh 7vw}
+    .g2,.g3,.g4,.wheel-wrap{grid-template-columns:1fr}
+    .flow{grid-template-columns:1fr 1fr}
+    .layer{grid-template-columns:auto 1fr;}
+    .layer .who{display:none}
+    #rail{display:none}
+    .chalice-stage{width:62vw}
+  }
+  /* print -> PDF: one slide per page */
+  @media print{
+    body{background:#fff}
+    .deck{height:auto;overflow:visible}
+    .slide{page-break-after:always;min-height:auto;height:100vh}
+    #rail,#prog,#hint{display:none}
+  }
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav id="rail"></nav>
+<div id="hint">Scroll / ↓ / →</div>
+
+<main class="deck" id="deck">
+
+<!-- 1 — COVER -->
+<section class="slide" id="cover" data-label="Cover">
+  <div class="smoke"></div><div class="grain"></div>
+  <div class="inner">
+    <div class="marque">Made in Xiaolin <span class="x">×</span> SYPP Cloud Bar</div>
+    <div class="chalice-stage" aria-hidden="true">
+      <svg viewBox="0 0 240 320">
+        <defs>
+          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f4c585" stop-opacity=".5"/>
+            <stop offset="0.45" stop-color="#e0a861" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#a83341" stop-opacity=".55"/>
+          </linearGradient>
+          <radialGradient id="liq" cx="50%" cy="60%" r="60%">
+            <stop offset="0" stop-color="#f4c585"/><stop offset="1" stop-color="#7a1f2b"/>
+          </radialGradient>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#f4c585" stop-opacity=".9"/><stop offset="1" stop-color="#f4c585" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a3a40"/><stop offset="1" stop-color="#17171b"/>
+          </linearGradient>
+        </defs>
+        <!-- rising cloud -->
+        <ellipse class="cloud-anim" cx="120" cy="30" rx="34" ry="16" fill="url(#halo)"/>
+        <ellipse class="cloud-anim" cx="120" cy="50" rx="20" ry="9" fill="url(#halo)" opacity=".7" style="animation-delay:1.5s"/>
+        <!-- diamond chalice vessel -->
+        <path d="M120 70 L196 150 Q210 200 175 232 Q120 270 65 232 Q30 200 44 150 Z"
+              fill="url(#glass)" stroke="#e9e1d4" stroke-opacity=".55" stroke-width="1.4"/>
+        <path d="M120 70 L196 150 Q210 200 175 232 Q120 270 65 232 Q30 200 44 150 Z"
+              fill="none" stroke="#fff" stroke-opacity=".15" stroke-width="4" />
+        <!-- liquid / ember -->
+        <path d="M58 205 Q120 250 182 205 Q190 232 168 250 Q120 282 72 250 Q50 232 58 205 Z" fill="url(#liq)" opacity=".88"/>
+        <!-- central intake stem -->
+        <rect x="113" y="118" width="14" height="60" rx="6" fill="#0c0c0e" stroke="#9b958c" stroke-opacity=".5"/>
+        <ellipse cx="120" cy="118" rx="20" ry="6" fill="#1d1d22" stroke="#cfc6b8" stroke-opacity=".4"/>
+        <!-- wood base -->
+        <ellipse cx="120" cy="262" rx="74" ry="20" fill="url(#wood)"/>
+        <ellipse cx="120" cy="258" rx="74" ry="18" fill="#26262b"/>
+        <!-- LED underglow -->
+        <ellipse class="underglow" cx="120" cy="288" rx="92" ry="16" fill="url(#halo)" opacity=".7"/>
+      </svg>
+    </div>
+    <h1>The Xiaolin<br/>Cloud Ritual</h1>
+    <div class="sub">Luxury Cannabis Hospitality <span class="serif-i">powered by</span> SYPP Cloud Bar</div>
+    <div class="foot">The Future of Cannabis Ritual Retail · Investor &amp; Partnership Brief · 2026</div>
+  </div>
+</section>
+
+<!-- 2 — BRAND PHILOSOPHY -->
+<section class="slide" data-label="Philosophy">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">01</span>Brand Philosophy</div>
+    <div class="grid g2">
+      <div>
+        <h2>We don't sell<br/>a product.<br/><span class="serif-i">We host a ritual.</span></h2>
+        <p class="lead">Xiaolin was built on the belief that cannabis, done right, is ceremonial — deliberate, sensory, shared. The Cloud Ritual translates that philosophy into a hospitality experience: paced, guided, and unforgettable.</p>
+        <hr class="hr"/>
+        <p class="small">A category-defining <span class="em">active cloud experience</span> — guests smell, taste, and feel a strain's terpene signature with no THC, no nicotine, and zero compliance risk. Discovery becomes the moment of purchase.</p>
+      </div>
+      <div class="grid" style="gap:1rem">
+        <div class="card"><span class="n">i.</span><h3>Ritual over consumption</h3><p>A guided session replaces the transaction. Every interaction is paced like a tasting, not a sale.</p></div>
+        <div class="card"><span class="n">ii.</span><h3>Sensory layering</h3><p>Aroma, vapor, light, and material composed together — a multi-sense signature for each strain.</p></div>
+        <div class="card"><span class="n">iii.</span><h3>Modern ceremonial culture</h3><p>The dignity of a tea ceremony and the intimacy of a listening bar, rendered for a new category.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Brand Philosophy</span></div>
+</section>
+
+<!-- 3 — THE CHALICE ECOSYSTEM -->
+<section class="slide" data-label="The Chalice">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">02</span>The Hero Object</div>
+    <div class="grid g2">
+      <div class="chalice-stage" style="width:min(30vw,320px);margin:0">
+        <svg viewBox="0 0 240 320">
+          <ellipse class="cloud-anim" cx="120" cy="34" rx="30" ry="14" fill="url(#halo)"/>
+          <path d="M120 70 L196 150 Q210 200 175 232 Q120 270 65 232 Q30 200 44 150 Z" fill="url(#glass)" stroke="#e9e1d4" stroke-opacity=".55" stroke-width="1.4"/>
+          <path d="M58 205 Q120 250 182 205 Q190 232 168 250 Q120 282 72 250 Q50 232 58 205 Z" fill="url(#liq)" opacity=".88"/>
+          <rect x="113" y="118" width="14" height="60" rx="6" fill="#0c0c0e" stroke="#9b958c" stroke-opacity=".5"/>
+          <ellipse cx="120" cy="118" rx="20" ry="6" fill="#1d1d22" stroke="#cfc6b8" stroke-opacity=".4"/>
+          <ellipse cx="120" cy="262" rx="74" ry="20" fill="url(#wood)"/><ellipse cx="120" cy="258" rx="74" ry="18" fill="#26262b"/>
+          <ellipse class="underglow" cx="120" cy="288" rx="92" ry="16" fill="url(#halo)" opacity=".7"/>
+        </svg>
+      </div>
+      <div>
+        <h2>The Chalice</h2>
+        <p class="lead">A diamond-cut vessel on a turned hardwood base. Museum-grade glass, warm metal, a single ember of light. The Chalice is the centerpiece of every ritual — and the engine of the ecosystem.</p>
+        <div class="grid g2" style="gap:.7rem 1.6rem;margin-top:1.8rem">
+          <ul class="clean"><li>Premium ritual hardware</li><li>Lifestyle &amp; collectible object</li></ul>
+          <ul class="clean"><li>Social technology platform</li><li>Recurring engagement device</li></ul>
+        </div>
+        <hr class="hr"/>
+        <div class="col-head">
+          <p class="small"><span class="amber">Revenue surfaces · </span>Direct-to-consumer · Dispensary sell-through · Accessories &amp; components · Ecosystem expansion</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>The Chalice Ecosystem</span></div>
+</section>
+
+<!-- 4 — THE CLOUD RITUAL BAR -->
+<section class="slide" data-label="Cloud Bar">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">03</span>The Experiential Layer</div>
+    <h2>The Cloud Ritual Bar</h2>
+    <p class="lead" style="margin-bottom:2rem">The architecture that frames the Chalice. LED-lit, modular, and deployable in a countertop footprint or a full lounge build — engineered for fast, compliant setup in any licensed environment.</p>
+    <div class="grid g4">
+      <div class="mock"><span class="cap"><b>Countertop Station</b>Matte-black plinth, warm underlighting, twin Chalice cradles. Drop-in retail footprint.</span></div>
+      <div class="mock"><span class="cap"><b>Event Installation</b>Modular bar with cloud canopy and amber wash — anchor of a premium activation.</span></div>
+      <div class="mock"><span class="cap"><b>Dispensary Integration</b>Built into the retail floor as a ritual destination, not a demo table.</span></div>
+      <div class="mock"><span class="cap"><b>Nightlife Activation</b>Low light, smoke gray, atmospheric energy — the bar as a social centerpiece.</span></div>
+    </div>
+    <p class="small" style="margin-top:1.6rem;color:var(--smoke)">The Cloud Bar supports the Chalice — restrained, architectural, never competing for the eye.</p>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>The Cloud Ritual Bar</span></div>
+</section>
+
+<!-- 5 — HOW THE EXPERIENCE WORKS -->
+<section class="slide" data-label="The Journey">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">04</span>The Guest Journey</div>
+    <h2>How the experience<br/><span class="serif-i">unfolds</span></h2>
+    <div class="flow" style="margin-top:1.8rem">
+      <div class="step"><span class="s">1</span><h3>Attraction</h3><p>Light, glass, and atmosphere draw the guest to the bar.</p></div>
+      <div class="step"><span class="s">2</span><h3>Ritual Introduction</h3><p>A Ritual Guide frames the session and sets the pace.</p></div>
+      <div class="step"><span class="s">3</span><h3>Strain Pairing</h3><p>Profile and intention matched to the guest's taste.</p></div>
+      <div class="step"><span class="s">4</span><h3>Cloud Pairing</h3><p>The terpene signature is layered as an active cloud.</p></div>
+    </div>
+    <div class="flow" style="margin-top:1px;border-top:0">
+      <div class="step"><span class="s">5</span><h3>Chalice Demonstration</h3><p>The hero object, presented and experienced first-hand.</p></div>
+      <div class="step"><span class="s">6</span><h3>Guided Session</h3><p>A paced sensory experience — the moment of belief.</p></div>
+      <div class="step"><span class="s">7</span><h3>QR Purchase Flow</h3><p>Frictionless checkout, in-store or to home.</p></div>
+      <div class="step"><span class="s">8</span><h3>Retail Follow-up</h3><p>Re-engagement, reorder, and ecosystem entry.</p></div>
+    </div>
+    <p class="small" style="margin-top:1.4rem;color:var(--smoke)">Luxury hospitality pacing — <span class="amber">trying is believing, and once they try, most buy.</span></p>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>The Guest Journey</span></div>
+</section>
+
+<!-- 6 — RETAIL ACTIVATION MODEL -->
+<section class="slide" data-label="Activation Tiers">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">05</span>Deployment Architecture</div>
+    <h2>Three tiers of activation</h2>
+    <div class="grid g3" style="margin-top:1.8rem">
+      <div class="tier"><div class="t-k">Tier I</div><h3>Event Activations</h3><p>Fully-staffed, branded ritual experiences for festivals, launches, and partner events. Maximum reach, minimum footprint.</p><ul class="clean"><li>Turnkey deployment kit</li><li>Ritual Guide staffing</li><li>QR commerce on-site</li></ul></div>
+      <div class="tier feature"><div class="t-k">Tier II</div><h3>Semi-Permanent Ritual Bars</h3><p>Multi-week residencies inside dispensaries and lounges. A recurring destination that builds local ritual culture.</p><ul class="clean"><li>Modular bar build</li><li>Rotating strain &amp; cloud pairings</li><li>Retailer co-marketing</li></ul></div>
+      <div class="tier"><div class="t-k">Tier III</div><h3>Permanent Xiaolin Cloud Bars</h3><p>Flagship architectural installations — the brand's physical home inside premier retail and hospitality venues.</p><ul class="clean"><li>Bespoke build-out</li><li>Integrated POS &amp; analytics</li><li>Revenue-share installation</li></ul></div>
+    </div>
+    <p class="small" style="margin-top:1.5rem;color:var(--smoke)">Every tier includes dispensary integration · premium hospitality setup · QR commerce · retailer engagement systems.</p>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Retail Activation Model</span></div>
+</section>
+
+<!-- 7 — STAFFING + TRAINING -->
+<section class="slide" data-label="Ritual Guides">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">06</span>The People</div>
+    <div class="grid g2">
+      <div>
+        <h2>Ritual Guides</h2>
+        <p class="lead">Not brand ambassadors. Not demo reps. A trained hospitality corps in the lineage of <span class="serif-i">the sommelier, the fragrance consultant, the whisky ambassador, the tea-ceremony host.</span></p>
+        <hr class="hr"/>
+        <p class="small">Certification transforms staff into commission-driven luxury product ambassadors — the human layer that turns a session into a sale, and a guest into a returning customer.</p>
+      </div>
+      <div class="grid g2" style="gap:1rem">
+        <div class="card"><h3>Hospitality</h3><p>Reading the room, pacing the session, hosting with warmth and restraint.</p></div>
+        <div class="card"><h3>Pairing Guidance</h3><p>Matching strain, profile, and intention to each guest.</p></div>
+        <div class="card"><h3>Chalice Demonstration</h3><p>Presenting the hero object with confidence and care.</p></div>
+        <div class="card"><h3>Sensory Education</h3><p>Translating terpene language into a guided tasting.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Staffing &amp; Training</span></div>
+</section>
+
+<!-- 8 — REVENUE MODEL -->
+<section class="slide" data-label="Revenue Model">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">07</span>Economics</div>
+    <div class="col-head" style="margin-bottom:1.4rem">
+      <h2 style="margin-bottom:0">A scalable experiential<br/>commerce ecosystem</h2>
+      <span class="tag">Five revenue layers</span>
+    </div>
+    <div class="layer"><span class="ln">1</span><div><h3>Chalice Device Sales</h3><p>Devices, accessories, replacement components, and ecosystem expansion. Every activation is a live demo and a customer-acquisition engine.</p></div><span class="who"><b>Made in Xiaolin</b>QR · in-store · event · ecommerce · referral</span></div>
+    <div class="layer"><span class="ln">2</span><div><h3>Ritual Guide Commissions</h3><p>Per-device commission, performance incentives, and event-conversion bonuses — aligning the human layer with premium engagement.</p></div><span class="who"><b>Ritual Guides</b>Commission-driven ambassadors</span></div>
+    <div class="layer"><span class="ln">3</span><div><h3>SYPP Infrastructure Participation</h3><p>For staffing, onboarding, logistics, QR commerce, training, deployment, reporting &amp; cloud pairing — commission per device sold at activations.</p></div><span class="who"><b>SYPP Cloud Bar</b>Infrastructure participation</span></div>
+    <div class="layer"><span class="ln">4</span><div><h3>Long-Tail Recurring Participation</h3><p>Trailing commissions, declining residuals, and growth-milestone incentives on repeat purchases, referred ecommerce, and dispensary reorders.</p></div><span class="who"><b>SYPP Cloud Bar</b>Recurring participation</span></div>
+    <div class="layer"><span class="ln">5</span><div><h3>Dispensary Economics</h3><p>Hardware sales, larger baskets, event traffic, premium positioning. Future: affiliate participation, sponsored ritual nights, installation revenue-share.</p></div><span class="who"><b>Retail Partners</b>Recurring experiential lift</span></div>
+    <p class="small" style="margin-top:1.2rem;text-align:center;color:var(--amber)">Final economics collaboratively structured.</p>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Revenue &amp; Incentive Ecosystem</span></div>
+</section>
+
+<!-- 9 — FLYWHEEL -->
+<section class="slide" data-label="The Flywheel">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">08</span>The Flywheel</div>
+    <div class="wheel-wrap">
+      <div class="wheel">
+        <svg viewBox="0 0 460 460" width="100%">
+          <defs>
+            <radialGradient id="core" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e0a861"/><stop offset="1" stop-color="#7a1f2b"/></radialGradient>
+            <radialGradient id="node" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#1d1d22"/><stop offset="1" stop-color="#101013"/></radialGradient>
+          </defs>
+          <circle cx="230" cy="230" r="150" fill="none" stroke="rgba(224,168,97,.18)" stroke-width="1"/>
+          <g stroke="rgba(224,168,97,.28)" stroke-width="1" fill="none">
+            <line x1="230" y1="230" x2="230" y2="55"/><line x1="230" y1="230" x2="354" y2="106"/>
+            <line x1="230" y1="230" x2="405" y2="230"/><line x1="230" y1="230" x2="354" y2="354"/>
+            <line x1="230" y1="230" x2="230" y2="405"/><line x1="230" y1="230" x2="106" y2="354"/>
+            <line x1="230" y1="230" x2="55" y2="230"/><line x1="230" y1="230" x2="106" y2="106"/>
+          </g>
+          <!-- core -->
+          <circle cx="230" cy="230" r="54" fill="url(#core)" opacity=".92"/>
+          <circle cx="230" cy="230" r="54" fill="none" stroke="#f4c585" stroke-opacity=".5"/>
+          <text x="230" y="224" text-anchor="middle" fill="#0a0a0a" font-family="Cormorant Garamond,serif" font-size="17" font-style="italic">Xiaolin</text>
+          <text x="230" y="244" text-anchor="middle" fill="#0a0a0a" font-family="Manrope,sans-serif" font-size="9" letter-spacing="2">RITUAL ECOSYSTEM</text>
+          <!-- nodes -->
+          <g font-family="Manrope,sans-serif" font-size="8.5" letter-spacing="1.4" fill="#cdc6bb" text-anchor="middle">
+            <g><circle cx="230" cy="55" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="230" y="52">CHALICE</text><text x="230" y="63">SALES</text></g>
+            <g><circle cx="354" cy="106" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="354" y="103">RITUAL</text><text x="354" y="114">GUIDES</text></g>
+            <g><circle cx="405" cy="230" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="405" y="227">QR</text><text x="405" y="238">COMMERCE</text></g>
+            <g><circle cx="354" cy="354" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="354" y="351">SYPP</text><text x="354" y="362">INFRA</text></g>
+            <g><circle cx="230" cy="405" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="230" y="402">DISPENSARY</text><text x="230" y="413">ACTIVATIONS</text></g>
+            <g><circle cx="106" cy="354" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="106" y="351">CONSUMER</text><text x="106" y="362">RETENTION</text></g>
+            <g><circle cx="55" cy="230" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="55" y="227">EVENT</text><text x="55" y="238">EXPERIENCE</text></g>
+            <g><circle cx="106" cy="106" r="34" fill="url(#node)" stroke="rgba(224,168,97,.4)"/><text x="106" y="103">RECURRING</text><text x="106" y="114">REVENUE</text></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2>One self-reinforcing<br/>loop</h2>
+        <p class="lead">Each activation sells Chalices. Each Chalice creates a customer. Each customer feeds recurring revenue and referral — funding the next activation.</p>
+        <hr class="hr"/>
+        <p class="small">SYPP's infrastructure is the axle the wheel turns on; the Chalice is the mass that gives it momentum. The more it spins, the faster it spins.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>The Flywheel Effect</span></div>
+</section>
+
+<!-- 10 — EXISTING INFRASTRUCTURE -->
+<section class="slide" data-label="Proven Backbone">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">09</span>Operational Track Record</div>
+    <div class="grid g2">
+      <div>
+        <h2>The backbone<br/>already exists</h2>
+        <p class="lead">SYPP has deployed custom-branded, LED-lit activation systems across licensed retail — modular hardware, field-rep infrastructure, white-label customization, and compliant rollout at scale.</p>
+        <hr class="hr"/>
+        <p class="small em" style="line-height:1.6">Made in Xiaolin becomes the <span class="amber">flagship evolution</span> of a proven operational platform — not a prototype, but a premium re-skin of infrastructure that already works in the field.</p>
+      </div>
+      <div class="grid g2" style="gap:1rem">
+        <div class="card"><h3>Custom-Branded Modules</h3><p>Fully wrapped hardware, re-skinned per partner.</p></div>
+        <div class="card"><h3>LED Activation Architecture</h3><p>Underlit bases &amp; interactive cloud effect.</p></div>
+        <div class="card"><h3>Modular Pod Systems</h3><p>Built-in storage, live demo, 20+ flavor profiles.</p></div>
+        <div class="card"><h3>White-Label Deployment</h3><p>Field-rep units, fast compliant setup, anywhere.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Existing Custom Deployment Infrastructure</span></div>
+</section>
+
+<!-- 11 — STATEWIDE SCALING -->
+<section class="slide" data-label="Scaling">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">10</span>Scale</div>
+    <div class="col-head" style="margin-bottom:1.6rem">
+      <h2 style="margin-bottom:0">Retail Ritual Infrastructure<br/><span class="serif-i">as a Service</span></h2>
+    </div>
+    <p class="lead" style="margin-bottom:2rem">A statewide deployment system — staffing, scheduling, onboarding, commerce, and reporting — delivered as managed infrastructure so the brand scales without building operations from scratch.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Outsourced Staffing</h3><p>Certified Ritual Guides, deployed on demand.</p></div>
+      <div class="card"><h3>Retailer Onboarding</h3><p>Standardized rollout &amp; co-marketing playbook.</p></div>
+      <div class="card"><h3>QR Commerce &amp; Reporting</h3><p>Unified checkout and per-activation analytics.</p></div>
+      <div class="card"><h3>Logistics &amp; Scheduling</h3><p>Event calendar, hardware, and pod fulfillment.</p></div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Statewide Scaling Strategy</span></div>
+</section>
+
+<!-- 12 — VISUAL MOCKUPS -->
+<section class="slide" data-label="Visual System">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">11</span>Visual System</div>
+    <h2>Environments</h2>
+    <p class="small" style="color:var(--smoke);margin-bottom:1.6rem">Art-direction concepts — matte black, warm LED underlighting, amber highlights, smoke gray, cinematic cloud atmosphere. Production renders to follow.</p>
+    <div class="grid g3" style="gap:1.4rem">
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Luxury Dispensary Bar</b>Architectural plinth, Chalice on hardwood, amber wash on matte black.</span></div>
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Nightlife Lounge</b>Low light, smoke, a single glowing Chalice as social centerpiece.</span></div>
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Museum Display</b>Vitrine lighting, negative space, the Chalice as a collectible object.</span></div>
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Event Installation</b>Cloud canopy, modular bar, Ritual Guides hosting in editorial dress.</span></div>
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Countertop System</b>LED-lit cloud station, twin cradles, premium tabletop presentation.</span></div>
+      <div class="mock" style="min-height:170px"><span class="cap"><b>Ritual in Session</b>Guest &amp; Guide mid-pairing, intimate light, fashion-forward hospitality.</span></div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Visual Mockups</span></div>
+</section>
+
+<!-- 13 — NEXT STEPS / CLOSE -->
+<section class="slide" data-label="Next Steps">
+  <div class="smoke"></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">12</span>Next Steps</div>
+    <div class="grid g2">
+      <div>
+        <h2>From pilot<br/>to platform</h2>
+        <p class="lead">A staged rollout — prove the ritual, certify the guides, integrate the Chalice, then scale statewide.</p>
+      </div>
+      <ol class="clean" style="list-style:none;counter-reset:s">
+        <li>Pilot deployment — flagship dispensary</li>
+        <li>Onboarding &amp; activation kit</li>
+        <li>Ritual Guide certification</li>
+        <li>Chalice integration &amp; QR commerce</li>
+        <li>Retailer rollout &amp; scheduling</li>
+        <li>Statewide expansion</li>
+      </ol>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark">XIAOLIN × SYPP</span><span>Next Steps</span></div>
+</section>
+
+<!-- 14 — FINALE -->
+<section class="slide" id="close" data-label="Close">
+  <div class="smoke"></div><div class="grain"></div>
+  <div class="inner">
+    <div class="marque" style="justify-content:center;margin-bottom:2.4rem">Made in Xiaolin <span class="x">×</span> SYPP Cloud Bar</div>
+    <h1>Building the future of<br/><span class="serif-i">cannabis ritual retail.</span></h1>
+    <div class="foot" style="margin-top:2.6rem">Activate Your Senses · syppcanna.com · madeinxiaolin.com</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+  const deck=document.getElementById('deck');
+  const slides=[...document.querySelectorAll('.slide')];
+  const rail=document.getElementById('rail');
+  const prog=document.getElementById('prog');
+  const hint=document.getElementById('hint');
+  // build rail
+  slides.forEach((s,i)=>{const a=document.createElement('a');a.title=s.dataset.label||('Slide '+(i+1));a.onclick=()=>s.scrollIntoView();rail.appendChild(a);});
+  const dots=[...rail.children];
+  function onScroll(){
+    const top=deck.scrollTop, h=deck.scrollHeight-deck.clientHeight;
+    prog.style.width=(top/h*100)+'%';
+    let idx=Math.round(top/deck.clientHeight);
+    idx=Math.max(0,Math.min(slides.length-1,idx));
+    dots.forEach((d,i)=>d.classList.toggle('on',i===idx));
+    hint.style.opacity = top>40 ? '0':'';
+  }
+  deck.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // keyboard nav
+  function go(d){const i=Math.round(deck.scrollTop/deck.clientHeight);const t=Math.max(0,Math.min(slides.length-1,i+d));slides[t].scrollIntoView();}
+  addEventListener('keydown',e=>{
+    if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(1);}
+    if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(-1);}
+    if(e.key==='Home')slides[0].scrollIntoView();
+    if(e.key==='End')slides[slides.length-1].scrollIntoView();
+  });
+</script>
+</body>
+</html>
