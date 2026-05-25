@@ -95,14 +95,16 @@ TARGETS = [
      "seal and a small neat QR code on the front skirt, with a glowing warm-gold LED top. "
      + CHALICE + "Exactly three of these Chalice vaporizers are seated SLIGHTLY INSET and "
      "RECESSED into the glowing LED tabletop, each sitting in a circular cradle ringed with "
-     "warm gold LED light exactly like the reference trays, vapor gently rising. A friendly "
-     "brand ambassador in tasteful Made in Xiaolin branded apparel stands behind the podium "
-     "welcoming guests. Two well-dressed customers are each clearly HOLDING one of these glass "
-     "Chalice cups up in their hands — gripping the cup, lifting it toward the face and sipping "
-     "the rising cloud through a clear straw, smiling and relaxed. The cups are unmistakably in "
-     "the guests' hands (hands wrapped around the glass), NOT resting on the podium. Natural "
-     "dispensary lighting, wood shelving with product softly blurred behind. Real, authentic, "
-     "understated lifestyle photography — not a staged studio set. " + BRAND, "16:9"),
+     "warm gold LED light exactly like the reference trays, vapor gently rising. The brand "
+     "ambassador is a stylish, pretty young Asian woman wearing a fitted Made in Xiaolin "
+     "branded t-shirt with the octagonal Xiaolin seal, standing behind the podium welcoming "
+     "guests with a warm smile. Two hip, younger guests in trendy modern streetwear are each "
+     "clearly HOLDING one of these glass Chalice cups in their hands — gripping the cup, "
+     "lifting it toward the face and sipping the rising cloud through a clear straw, looking "
+     "cool and relaxed. The cups are unmistakably in the guests' hands (hands wrapped around "
+     "the glass), NOT resting on the podium. Natural dispensary lighting, wood shelving with "
+     "product softly blurred behind. Real, authentic, understated lifestyle photography — not "
+     "a staged studio set. " + BRAND, "16:9"),
 
     ("event.jpg", CHREF,
      "A premium event activation Cloud Bar in lacquer-red and gold beneath a soft gold "
