@@ -212,7 +212,7 @@
     #rail{display:none}.chalice-stage{width:58vw}
     .brandbar{position:static;margin-top:1.6rem;left:auto;right:auto}
   }
-  @media print{.deck{height:auto;overflow:visible}.slide{page-break-after:always;min-height:auto;height:100vh}#rail,#prog,#hint{display:none}}
+  @media print{@page{size:1280px 720px;margin:0}html,body{background:#5d090f}.deck{height:auto;overflow:visible}.slide{page-break-after:always;break-after:page;min-height:0;height:720px;width:1280px}.slide:last-child{page-break-after:avoid}#rail,#prog,#hint,#lb,.fsbtn{display:none!important}.paper{display:none}}
 </style>
 </head>
 <body>
@@ -247,11 +247,33 @@
   </div>
 </section>
 
+<section class="slide" data-label="Philosophy">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">01</span>Brand Philosophy<span class="cn">道</span></div>
+    <div class="grid g2">
+      <div>
+        <h2>We don't sell a product.<br/><span class="serif-i">We host a ritual.</span></h2>
+        <p class="lead">Xiaolin was built in the temple tradition — where craft is ceremony and every blend is composed by hand. The Cloud Ritual translates that philosophy into hospitality: paced, guided, sensory, shared.</p>
+        <hr class="hr"/>
+        <p class="small">A category-defining <span class="em">active cloud experience</span> — guests smell, taste &amp; feel a strain's terpene signature with no THC, no nicotine, and zero compliance risk. <span class="gold">Discovery becomes the moment of purchase.</span></p>
+      </div>
+      <div class="vitrine gframe" style="aspect-ratio:1/1">
+        <img src="img/Photoroom_20241218_174339.jpg" alt="Made in Xiaolin Capo cannagar — Mandarin Jelly × Ayo" />
+        <span class="cap"><b>Rolled Proper · Made in Xiaolin</b>The house signature — a hand-blended collaboration, sealed in gold &amp; the Xiaolin chop.</span>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Brand Philosophy</span></div>
+</section>
+
+<!-- OVERVIEW -->
 <section class="slide" data-label="Overview">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">01</span>Overview<span class="cn">览</span></div>
+    <div class="kicker"><span class="num">02</span>Overview<span class="cn">览</span></div>
     <h2>One ritual. One partner.<br/><span class="serif-i">One self-funding platform.</span></h2>
     <div class="grid g2" style="gap:1.8rem;align-items:center">
       <div>
@@ -272,7 +294,7 @@
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">02</span>The Hero Object<span class="cn">器</span></div>
+    <div class="kicker"><span class="num">03</span>The Hero Object<span class="cn">器</span></div>
     <div class="grid g2">
       <div class="vitrine gframe" style="aspect-ratio:1/1;max-height:64vh">
         <img src="img/chalice/c5.jpg" alt="The Made in Xiaolin Chalice vaporizer filling with vapor" onerror="this.src='img/gen/hero-chalice.jpg?v=6'" />
@@ -297,7 +319,7 @@
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">03</span>The Experiential Layer<span class="cn">雲吧</span></div>
+    <div class="kicker"><span class="num">04</span>The Experiential Layer<span class="cn">雲吧</span></div>
     <h2>The Cloud Ritual Bar</h2>
     <p class="lead" style="margin-bottom:1.5rem">The architecture that frames the Chalice — lacquer red &amp; gold, LED-lit, modular. Deployable from a countertop footprint to a full lounge build, engineered for fast, compliant setup in any licensed environment.</p>
     <div class="grid g3" style="gap:1.3rem">
@@ -314,7 +336,7 @@
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">04</span>The Signature Ritual<span class="cn">調</span></div>
+    <div class="kicker"><span class="num">05</span>The Signature Ritual<span class="cn">調</span></div>
     <div class="grid g2">
       <div>
         <h2>Sample our blends.<br/>Then <span class="serif-i">blend your own.</span></h2>
@@ -347,7 +369,7 @@
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">05</span>The Guest Journey<span class="cn">禮</span></div>
+    <div class="kicker"><span class="num">06</span>The Guest Journey<span class="cn">禮</span></div>
     <h2>How the experience <span class="serif-i">unfolds</span></h2>
     <div class="flow" style="margin-top:1.4rem">
       <div class="step"><span class="s">1</span><h3>Attraction</h3><p>Glass, gold light &amp; atmosphere draw the guest in.</p></div>
@@ -366,11 +388,30 @@
   <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>The Guest Journey</span></div>
 </section>
 
+<section class="slide red" data-label="Visual System">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">07</span>Visual System<span class="cn">境</span></div>
+    <h2>Environments</h2>
+    <p class="small" style="color:var(--gold);margin-bottom:1.2rem">Lacquer red, gold trim, warm LED, the Xiaolin chop — branded mockups generated from SYPP's real Cloud Bar systems.</p>
+    <div class="grid g3" style="gap:1.1rem">
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/popup-set.jpg?v=17" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Dispensary Pop-Up Set</b>Three units · QR purchase.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/popup-dispensary.jpg?v=13" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Dispensary Pop-Up</b>Branded portable bar.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><video src="reel.mp4?v=4" controls autoplay muted loop playsinline webkit-playsinline poster="img/reel/reel-poster.jpg" preload="metadata" style="width:100%;height:100%;object-fit:cover"></video><span class="cap"><b>The Reel</b>Volume &amp; ⛶ full-screen in the player.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/installation-trays.jpg?v=6" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Modular Trays</b>Countertop to bar.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/nightlife.jpg?v=10" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Nightlife Lounge</b>Atmospheric centerpiece.</span></div>
+      <div class="vitrine gframe" style="aspect-ratio:4/3"><img src="img/gen/event.jpg?v=7" alt="" onerror="this.closest('.vitrine').style.display='none'"/><span class="cap"><b>Event Activation</b>Gold cloud canopy.</span></div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Visual Mockups</span></div>
+</section>
+
 <section class="slide" data-label="Deploy in Minutes">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">06</span>The Portable Kit<span class="cn">包</span></div>
+    <div class="kicker"><span class="num">08</span>The Portable Kit<span class="cn">包</span></div>
     <div class="col-head" style="margin-bottom:1.1rem">
       <h2 style="margin-bottom:0">Deploy in minutes</h2>
       <span class="tag">One bag · one ambassador</span>
@@ -386,11 +427,34 @@
   <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>The Portable Kit</span></div>
 </section>
 
+<section class="slide" data-label="Ritual Guides">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">09</span>The People<span class="cn">師</span></div>
+    <div class="grid g2">
+      <div>
+        <h2>Ritual Guides</h2>
+        <p class="lead">Not brand ambassadors. Not demo reps. A trained hospitality corps in the lineage of <span class="serif-i">the sommelier, the fragrance consultant, the whisky ambassador, the tea-ceremony host.</span></p>
+        <hr class="hr"/>
+        <p class="small">Certification transforms staff into commission-driven luxury product ambassadors — the human layer that turns a session into a sale, and a guest into a returning customer.</p>
+      </div>
+      <div class="grid g2" style="gap:1rem">
+        <div class="card"><h3>Hospitality</h3><p>Reading the room, pacing the session, hosting with warmth &amp; restraint.</p></div>
+        <div class="card"><h3>Blend Guidance</h3><p>Coaching guests through tasting, mixing &amp; composing their signature.</p></div>
+        <div class="card"><h3>Chalice Demonstration</h3><p>Presenting the hero object with confidence &amp; care.</p></div>
+        <div class="card"><h3>Sensory Education</h3><p>Translating terpene language into a guided tasting.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Staffing &amp; Training</span></div>
+</section>
+
 <section class="slide red" data-label="The Opportunity">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">07</span>The Opportunity<span class="cn">機</span></div>
+    <div class="kicker"><span class="num">10</span>The Opportunity<span class="cn">機</span></div>
     <h2>An activation program that <span class="serif-i">pays for itself.</span></h2>
     <div class="grid g2" style="margin-top:1.1rem;align-items:stretch;gap:1.4rem">
       <div class="card" style="border-color:rgba(255,217,138,.5)">
@@ -421,11 +485,56 @@
   <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>The Opportunity</span></div>
 </section>
 
+<section class="slide" data-label="Activation Tiers">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">11</span>Deployment Architecture<span class="cn">展</span></div>
+    <h2>Three tiers of activation</h2>
+    <div class="grid g3" style="margin-top:1.4rem">
+      <div class="tier"><div class="t-k">Tier I</div><h3>Event Activations</h3><p>Fully-staffed branded ritual experiences for festivals, launches &amp; partner events. Maximum reach, minimum footprint.</p><ul class="clean"><li>Turnkey deployment kit</li><li>Ritual Guide staffing</li><li>QR commerce on-site</li></ul></div>
+      <div class="tier feature"><div class="t-k">Tier II</div><h3>Semi-Permanent Ritual Bars</h3><p>Multi-week residencies inside dispensaries &amp; lounges — a recurring destination that builds local ritual culture.</p><ul class="clean"><li>Modular bar build</li><li>Rotating strain &amp; blend menu</li><li>Retailer co-marketing</li></ul></div>
+      <div class="tier"><div class="t-k">Tier III</div><h3>Permanent Xiaolin Cloud Bars</h3><p>Flagship architectural installations — the brand's physical home inside premier retail &amp; hospitality venues.</p><ul class="clean"><li>Bespoke build-out</li><li>Integrated POS &amp; analytics</li><li>Revenue-share installation</li></ul></div>
+    </div>
+    <p class="small" style="margin-top:1.3rem;color:var(--gold-deep)">Every tier includes dispensary integration · premium hospitality setup · QR commerce · retailer engagement systems.</p>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Retail Activation Model</span></div>
+</section>
+
+<section class="slide red" data-label="The Xiaolin Blend">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">12</span>New Product Line<span class="cn">油</span></div>
+    <div class="grid g2">
+      <div>
+        <h2>The Xiaolin Blend</h2>
+        <p class="lead">Made in Xiaolin doesn't yet offer a 510 cartridge. The Chalice opens that door — take the premium rosins Xiaolin already sources, compose a signature house blend, and sell it alongside the device.</p>
+        <hr class="hr"/>
+        <div class="grid g2" style="gap:.5rem 1.4rem">
+          <ul class="clean"><li>510 carts marked <span class="gold">"Made for the Chalice"</span></li><li>Built from rosins already in supply</li></ul>
+          <ul class="clean"><li>High margin, simple to produce</li><li>Extends the craft line</li></ul>
+        </div>
+        <div class="card" style="margin-top:1.2rem;padding:1rem 1.2rem;border-color:var(--gold)">
+          <h3 style="color:var(--gold)">The Ritual Bundle</h3>
+          <p style="font-size:.86rem;margin-top:.2rem">Sell the Chalice device with a set of <span class="em">Made-for-the-Chalice</span> Blend carts as one bundle — higher ticket, instant re-order habit, and a built-in reason to come back.</p>
+        </div>
+        <p class="small" style="margin-top:1rem;color:var(--gold)">Razor &amp; blades: the device acquires the customer; the Blend earns again with every refill.</p>
+      </div>
+      <div class="vitrine gframe" style="aspect-ratio:1/1">
+        <img src="img/gen/xiaolin-blend-cart.jpg?v=6" alt="The Xiaolin Blend — branded 510 live-rosin cartridge & box" onerror="this.closest('.vitrine').style.display='none'"/>
+        <span class="cap"><b>The Xiaolin Blend · 510 · Made for the Chalice</b>House live-rosin, bundled with the device — a high-margin recurring stream.</span>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>New Product Line</span></div>
+</section>
+
 <section class="slide" data-label="Who Provides What">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">08</span>Who Provides What<span class="cn">約</span></div>
+    <div class="kicker"><span class="num">13</span>Who Provides What<span class="cn">約</span></div>
     <h2>What each side brings</h2>
     <div class="grid g2" style="margin-top:1.1rem;gap:1.4rem;align-items:stretch">
       <div class="card">
@@ -457,35 +566,120 @@
   <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Who Provides What</span></div>
 </section>
 
-<!-- FULL PLATFORM (condensed) -->
-<section class="slide" data-label="The Full Platform">
+<section class="slide" data-label="Revenue Model">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="col-head" style="margin-bottom:.9rem">
-      <div class="kicker" style="margin-bottom:0"><span class="num">09</span>Beyond Phase One<span class="cn">全</span></div>
-      <a href="xiaolin-full-deck.pdf" style="text-decoration:none;border:1px solid var(--red);color:#fff;background:var(--red);border-radius:3px;padding:.55em 1.1em;font-size:.72rem;letter-spacing:.06em;font-weight:700">Download the full deck (PDF) ↓</a>
+    <div class="kicker"><span class="num">14</span>Economics<span class="cn">利</span></div>
+    <div class="col-head" style="margin-bottom:1.1rem">
+      <h2 style="margin-bottom:0">How we all make money</h2>
+      <span class="tag">Five revenue layers</span>
     </div>
-    <h2>The full platform</h2>
-    <p class="lead" style="margin-bottom:1rem">Phase One is the in-store pop-up + the sales engine. The full program — detailed in the downloadable deck — extends into:</p>
-    <div class="grid g3" style="gap:1rem">
-      <div class="card"><h3>Activation Tiers</h3><p>Events · semi-permanent ritual bars · permanent Cloud Bars.</p></div>
-      <div class="card"><h3>The Xiaolin Blend · 510</h3><p>Branded carts from your rosins — high-margin recurring line.</p></div>
-      <div class="card"><h3>How We All Make Money</h3><p>Five aligned revenue layers; self-funding economics.</p></div>
-      <div class="card"><h3>The Flywheel</h3><p>Activations → Chalice sales → customers → recurring revenue → more activations.</p></div>
-      <div class="card"><h3>Proven Backbone &amp; Guides</h3><p>SYPP's existing LED activation infrastructure &amp; trained Ritual Guides.</p></div>
-      <div class="card"><h3>Statewide Scale</h3><p>Staffing, logistics &amp; reporting — Buffalo to Montauk.</p></div>
-    </div>
-    <p class="small" style="margin-top:1rem;color:var(--gold-deep)">Full detail, economics &amp; all visual mockups in the downloadable deck, or the full scroll version at <span class="em">xiaolin.syppit.com/full.html</span></p>
+    <div class="layer"><span class="ln">1</span><div><h3>Chalice Device Sales</h3><p>Devices, accessories, replacement components &amp; ecosystem expansion. Every activation is a live demo &amp; a customer-acquisition engine.</p></div><span class="who"><b>Made in Xiaolin</b>QR · in-store · event · ecommerce</span></div>
+    <div class="layer"><span class="ln">2</span><div><h3>Ritual Guide Commissions</h3><p>Per-device commission, performance incentives &amp; event-conversion bonuses — aligning the human layer with premium engagement.</p></div><span class="who"><b>Ritual Guides</b>Commission-driven</span></div>
+    <div class="layer"><span class="ln">3</span><div><h3>SYPP Infrastructure Participation</h3><p>For staffing, onboarding, logistics, QR commerce, training, deployment, reporting &amp; cloud pairing — commission per device sold.</p></div><span class="who"><b>SYPP Cloud Bar</b>Infrastructure</span></div>
+    <div class="layer"><span class="ln">4</span><div><h3>Long-Tail Recurring Participation</h3><p>Trailing commissions, declining residuals &amp; growth-milestone incentives on repeat purchases, referred ecommerce &amp; reorders.</p></div><span class="who"><b>SYPP Cloud Bar</b>Recurring</span></div>
+    <div class="layer"><span class="ln">5</span><div><h3>Dispensary Economics</h3><p>Hardware sales, larger baskets, event traffic, premium positioning. Future: affiliate participation, sponsored ritual nights, revenue-share.</p></div><span class="who"><b>Retail Partners</b>Experiential lift</span></div>
+    <p class="small" style="margin-top:.9rem;text-align:center;color:var(--red);font-weight:600">Final economics collaboratively structured.</p>
   </div>
-  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>The Full Platform</span></div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Revenue &amp; Incentive Ecosystem</span></div>
+</section>
+
+<section class="slide red" data-label="The Flywheel">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">15</span>The Flywheel<span class="cn">輪</span></div>
+    <div class="wheel-wrap">
+      <div class="wheel">
+        <svg viewBox="0 0 460 460" width="100%" id="flywheel">
+          <defs>
+            <radialGradient id="core" cx="50%" cy="42%" r="60%"><stop offset="0" stop-color="#ff7a4a"/><stop offset="0.55" stop-color="#d8222f"/><stop offset="1" stop-color="#7a0d14"/></radialGradient>
+            <radialGradient id="node" cx="50%" cy="38%" r="62%"><stop offset="0" stop-color="#9a1320"/><stop offset="1" stop-color="#5a090f"/></radialGradient>
+          </defs>
+          <circle class="ring-cw" cx="230" cy="230" r="178" fill="none" stroke="rgba(240,207,134,.45)" stroke-width="1.4" stroke-dasharray="2 12"/>
+          <circle class="ring-ccw" cx="230" cy="230" r="150" fill="none" stroke="rgba(255,120,90,.5)" stroke-width="1" stroke-dasharray="1 10"/>
+          <g stroke="rgba(240,207,134,.28)" stroke-width="1" fill="none">
+            <line x1="230" y1="230" x2="230" y2="62"/><line x1="230" y1="230" x2="349" y2="111"/>
+            <line x1="230" y1="230" x2="398" y2="230"/><line x1="230" y1="230" x2="349" y2="349"/>
+            <line x1="230" y1="230" x2="230" y2="398"/><line x1="230" y1="230" x2="111" y2="349"/>
+            <line x1="230" y1="230" x2="62" y2="230"/><line x1="230" y1="230" x2="111" y2="111"/>
+          </g>
+          <g fill="#f7d27e" id="sparks"></g>
+          <circle cx="230" cy="230" r="56" fill="url(#core)"/>
+          <circle cx="230" cy="230" r="56" fill="none" stroke="#f7d27e" stroke-opacity=".7"/>
+          <text x="230" y="222" text-anchor="middle" fill="#fff" font-family="Cormorant Garamond,serif" font-size="18" font-style="italic">Xiaolin</text>
+          <text x="230" y="240" text-anchor="middle" fill="#f7d27e" font-family="Manrope,sans-serif" font-size="8" letter-spacing="2">RITUAL</text>
+          <text x="230" y="252" text-anchor="middle" fill="#f7d27e" font-family="Manrope,sans-serif" font-size="8" letter-spacing="2">ECOSYSTEM</text>
+          <g font-family="Manrope,sans-serif" font-size="8.4" letter-spacing="1.3" fill="#f7efdd" text-anchor="middle">
+            <g><circle cx="230" cy="62" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="230" y="59">CHALICE</text><text x="230" y="70">SALES</text></g>
+            <g><circle cx="349" cy="111" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="349" y="108">RITUAL</text><text x="349" y="119">GUIDES</text></g>
+            <g><circle cx="398" cy="230" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="398" y="227">QR</text><text x="398" y="238">COMMERCE</text></g>
+            <g><circle cx="349" cy="349" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="349" y="346">SYPP</text><text x="349" y="357">INFRA</text></g>
+            <g><circle cx="230" cy="398" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="230" y="395">DISPENSARY</text><text x="230" y="406">ACTIVATION</text></g>
+            <g><circle cx="111" cy="349" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="111" y="346">CONSUMER</text><text x="111" y="357">RETENTION</text></g>
+            <g><circle cx="62" cy="230" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="62" y="227">EVENT</text><text x="62" y="238">EXPERIENCE</text></g>
+            <g><circle cx="111" cy="111" r="35" fill="url(#node)" stroke="rgba(240,207,134,.55)"/><text x="111" y="108">RECURRING</text><text x="111" y="119">REVENUE</text></g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2>One self-reinforcing loop</h2>
+        <p class="lead">Each activation sells Chalices. Each Chalice creates a customer. Each customer feeds recurring revenue &amp; referral — funding the next activation.</p>
+        <div style="margin:1.5rem 0 .9rem">
+          <div class="counter-k">Units sold · illustrative ramp</div>
+          <div class="counter" id="counter">0</div>
+        </div>
+        <p class="small">SYPP's infrastructure is the axle; the Chalice is the mass that gives it momentum. <span class="gold">The more it spins, the faster it spins.</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>The Flywheel Effect</span></div>
+</section>
+
+<section class="slide" data-label="Proven Backbone">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">16</span>Operational Track Record<span class="cn">基</span></div>
+    <div class="grid g2">
+      <div>
+        <h2>The backbone<br/>already exists</h2>
+        <p class="lead">SYPP has deployed custom-branded, LED-lit activation systems across licensed retail — modular hardware, field-rep infrastructure, white-label customization, and compliant rollout at scale.</p>
+        <hr class="hr"/>
+        <p class="small"><span class="em">Made in Xiaolin becomes the <span class="gold">flagship evolution</span> of a proven platform</span> — not a prototype, but a premium re-skin of infrastructure already working in the field.</p>
+      </div>
+      <div class="vitrine gframe" style="aspect-ratio:1/1">
+        <img src="img/gen/tasting-dispensary.jpg?v=19" alt="Branded Cloud Bar tasting inside a dispensary" onerror="this.src='img/gen/hero-chalice.jpg?v=6'"/>
+        <span class="cap"><b>Live in-store today</b>SYPP Cloud Bars already running guided ritual tastings inside licensed dispensaries.</span>
+      </div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Existing Deployment Infrastructure</span></div>
+</section>
+
+<section class="slide" data-label="Scaling">
+  <div class="paper"></div>
+  <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
+  <div class="inner">
+    <div class="kicker"><span class="num">17</span>Scale<span class="cn">擴</span></div>
+    <h2>Retail Ritual Infrastructure <span class="serif-i">as a Service</span></h2>
+    <p class="lead" style="margin:1.2rem 0 1.5rem">A statewide deployment system — staffing, scheduling, onboarding, commerce &amp; reporting — delivered as managed infrastructure so the brand scales without building operations from scratch.</p>
+    <div class="grid g4">
+      <div class="card"><h3>Outsourced Staffing</h3><p>Certified Ritual Guides, deployed on demand.</p></div>
+      <div class="card"><h3>Retailer Onboarding</h3><p>Standardized rollout &amp; co-marketing playbook.</p></div>
+      <div class="card"><h3>QR Commerce &amp; Reporting</h3><p>Unified checkout &amp; per-activation analytics.</p></div>
+      <div class="card"><h3>Logistics &amp; Scheduling</h3><p>Event calendar, hardware &amp; pod fulfillment.</p></div>
+    </div>
+  </div>
+  <div class="brandbar"><span class="mark"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/> XIAOLIN × SYPP</span><span>Statewide Scaling Strategy</span></div>
 </section>
 
 <section class="slide" data-label="Next Steps">
   <div class="paper"></div>
   <div class="seal-tag"><img src="img/Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png" alt=""/><span>Made in Xiaolin</span></div>
   <div class="inner">
-    <div class="kicker"><span class="num">10</span>Next Steps<span class="cn">行</span></div>
+    <div class="kicker"><span class="num">18</span>Next Steps<span class="cn">行</span></div>
     <div class="grid g2">
       <div>
         <h2>From pilot<br/>to platform</h2>

@@ -1,4 +1,9 @@
+img/videos/_*
 img/videos/reel-sample.mp4
 img/videos/reel-walkaway.mp4
-img/videos/_*
+img/videos/v2-*.mp4
+img/videos/v3-*.mp4
 img/videos/f_*.jpg
+img/videos/c_*.jpg
+img/videos/chk_*.jpg
+__pycache__/

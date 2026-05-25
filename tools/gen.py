@@ -183,17 +183,21 @@ TARGETS = [
      ["gen/popup-dispensary.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A vertical candid photo: a lively GROUP of four or five diverse young people gathered "
      "around the Made in Xiaolin x SYPP Cloud Bar in an upscale dispensary lounge — several of "
-     "them HOLDING hand-sized clear glass dome cups and sipping vapor through straws, laughing "
-     "and socializing together; an Asian woman ambassador in a Made in Xiaolin tee hosting. "
-     "Warm, energetic, real lifestyle photography, lots of people in the action. " + BRAND, "9:16"),
+     "them HOLDING small hand-sized clear glass dome cups and sipping vapor through straws, "
+     "laughing and socializing together; an Asian woman ambassador in a Made in Xiaolin tee "
+     "hosting. STRICT: every glass is small and hand-sized; do NOT put any oversized or giant "
+     "chalice in the scene; the chalices on the tray are small. Warm, energetic, real lifestyle "
+     "photography, lots of people in the action. " + BRAND, "9:16"),
 
     ("reel-home.jpg",
      ["chalice/c-hand.jpg", "chalice/c7.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
      "A vertical cozy lifestyle photo: a young customer relaxing at home on a couch with two "
-     "friends, enjoying the Made in Xiaolin Chalice together — holding a hand-sized clear glass "
-     "dome cup with soft vapor, sipping through a straw, laughing; warm living-room light, "
-     "plants and modern decor. The customer in front looks straight at the camera and WINKS "
-     "playfully with a smile. Real, warm, authentic lifestyle photography. " + BRAND, "9:16"),
+     "friends, enjoying the Made in Xiaolin Chalice together. He holds ONLY the small "
+     "hand-sized clear glass DOME cup (about the size of a small tumbler, lifted off and "
+     "separated from any base — NO base in his hand, not the whole device), soft vapor inside, "
+     "sipping through a clear straw. Keep the glass SMALL and correctly scaled to the hand. "
+     "Warm living-room light, plants and modern decor. The customer in front looks straight at "
+     "the camera and WINKS playfully with a smile. Real, warm lifestyle photography. " + BRAND, "9:16"),
 
     ("reel-walkaway.jpg",
      ["chalice/c7.jpg", "chalice/c-hand.jpg", "Xiaolin_Logo_3_f952c9dd-0f8e-4fb8-bbce-12ca0981d697.png"],
